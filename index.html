@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+
+    <style>
+      .bingung-untuk-melakukan {
+        margin: 0;
+      }
+      .bingung-untuk-melakukan-container1 {
+        width: 100%;
+      }
+      .bingung-untuk-melakukan-container {
+        width: 400px;
+        position: relative;
+        line-height: 32px;
+        display: flex;
+        align-items: center;
+      }
+      .label-text {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .state-layer1 {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+      }
+      .button {
+        border-radius: 100px;
+        background-color: #904a4a;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        color: #fff8f7;
+      }
+      .bingung-untuk-melakukan-pemind-parent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 24px;
+      }
+      .freepik-plants-inject-63-icon {
+        position: absolute;
+        height: 100%;
+        width: 9.19%;
+        top: 0%;
+        right: 90.81%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-plants-inject-63-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 9.19%;
+        top: 0%;
+        right: 0.01%;
+        bottom: 0%;
+        left: 90.8%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-plants-inject-63 {
+        position: absolute;
+        height: 16.9%;
+        width: 96.82%;
+        top: 44.93%;
+        right: 1.59%;
+        bottom: 38.17%;
+        left: 1.59%;
+      }
+      .freepik-floor-inject-63-icon {
+        position: absolute;
+        height: 55.98%;
+        width: 96.94%;
+        top: 42.72%;
+        right: 1.53%;
+        bottom: 1.3%;
+        left: 1.53%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-shadows-inject-63-icon {
+        position: absolute;
+        height: 35.24%;
+        width: 83.76%;
+        top: 57.71%;
+        right: 10.48%;
+        bottom: 7.05%;
+        left: 5.76%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-check-marks-inject-6-icon {
+        position: absolute;
+        height: 27.7%;
+        width: 92.26%;
+        top: 6.51%;
+        right: 3.73%;
+        bottom: 65.79%;
+        left: 4.01%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-table-1-inject-63-icon {
+        position: absolute;
+        height: 59.14%;
+        width: 26.82%;
+        top: 14.74%;
+        right: 49.16%;
+        bottom: 26.12%;
+        left: 24.02%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-table-2-inject-63-icon {
+        position: absolute;
+        height: 41.92%;
+        width: 24.98%;
+        top: 50.14%;
+        right: 29.23%;
+        bottom: 7.94%;
+        left: 45.79%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-character-2-inject-6-icon {
+        position: absolute;
+        height: 64.78%;
+        width: 29.22%;
+        top: 14.98%;
+        right: 11.11%;
+        bottom: 20.24%;
+        left: 59.67%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-character-1-inject-6-icon {
+        position: absolute;
+        height: 66.6%;
+        width: 27.56%;
+        top: 12.52%;
+        right: 63.89%;
+        bottom: 20.88%;
+        left: 8.55%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .freepik-speech-bubble-inject-icon {
+        position: absolute;
+        height: 11.82%;
+        width: 9.34%;
+        top: 12.78%;
+        right: 30.18%;
+        bottom: 75.4%;
+        left: 60.48%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .voting-amico-1 {
+        width: 500px;
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .frame-parent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      .state-layer {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        left: 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      .building-blockscard-statesou {
+        align-self: stretch;
+        position: relative;
+        background-color: #fff8f7;
+        border: 1px solid #d7c1c0;
+        box-sizing: border-box;
+        height: 600px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .group-child {
+        position: absolute;
+        top: 0px;
+        left: 9px;
+        box-shadow: 5px 5px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        background-color: #fff0ef;
+        width: 917px;
+        height: 351px;
+      }
+      .midocument-icon {
+        position: absolute;
+        top: 65px;
+        left: 49px;
+        width: 66px;
+        height: 65px;
+        overflow: hidden;
+      }
+      .menunjukkan-ktp-el-atau {
+        margin-bottom: 0px;
+      }
+      .menunjukkan-ktp-el-atau-kk-mel {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        padding-left: 32px;
+      }
+      .menunjukkan-ktp-el-atau-container {
+        position: absolute;
+        top: 174px;
+        left: 130px;
+        font-size: 24px;
+        display: inline-block;
+        width: 713px;
+      }
+      .persyaratan-yang-harus-container {
+        position: absolute;
+        top: 65px;
+        left: 130px;
+        font-size: 30px;
+        display: inline-block;
+        width: 579px;
+        height: 65px;
+      }
+      .group-item {
+        position: absolute;
+        top: 408px;
+        left: 9px;
+        box-shadow: 5px 5px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        background-color: #fff0ef;
+        width: 917px;
+        height: 509px;
+      }
+      .group-inner {
+        position: absolute;
+        top: 974px;
+        left: 9px;
+        box-shadow: 5px 5px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        background-color: #fff0ef;
+        width: 917px;
+        height: 393px;
+      }
+      .rectangle-div {
+        position: absolute;
+        top: 1424px;
+        left: 0px;
+        box-shadow: 5px 5px 6px 6px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        background-color: #fff0ef;
+        width: 917px;
+        height: 699px;
+      }
+      .waktu-pemilih-melaporkan {
+        position: absolute;
+        top: 1029px;
+        left: 125px;
+        font-weight: 600;
+        display: inline-block;
+        width: 777px;
+        height: 65px;
+      }
+      .vector-icon {
+        position: absolute;
+        height: 2.99%;
+        width: 5.94%;
+        top: 51.54%;
+        right: 88.77%;
+        bottom: 45.47%;
+        left: 5.29%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .untuk-menggunakan-hak-container {
+        position: absolute;
+        top: 1146px;
+        left: 125px;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        width: 761px;
+      }
+      .datang-langsung-ke-panitia-pem {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        padding-left: 33px;
+      }
+      .datang-langsung-ke-container {
+        position: absolute;
+        top: 558px;
+        left: 110px;
+        font-size: 25px;
+        display: inline-block;
+        width: 765px;
+        height: 65px;
+      }
+      .prosedur-mengajukan-pindah {
+        position: absolute;
+        top: 479px;
+        left: 124px;
+        font-weight: 600;
+        display: inline-block;
+        width: 617px;
+        height: 65px;
+      }
+      .vector-icon1 {
+        position: absolute;
+        height: 2.45%;
+        width: 5.4%;
+        top: 23.77%;
+        right: 89.31%;
+        bottom: 73.78%;
+        left: 5.29%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .jenis-pemilihan-yang {
+        position: absolute;
+        top: 1488px;
+        left: 129px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        width: 557px;
+        height: 65px;
+      }
+      .vscode-iconsfile-type-light-t {
+        position: absolute;
+        top: 1488px;
+        left: 48px;
+        width: 54px;
+        height: 62px;
+        overflow: hidden;
+      }
+      .calon-anggota-dpr-container {
+        position: absolute;
+        top: 1575px;
+        left: 129px;
+        font-size: 25px;
+        display: inline-block;
+        width: 721px;
+      }
+      .rectangle-parent {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 926px;
+        height: 2123px;
+      }
+      .main-inner {
+        width: 926px;
+        position: relative;
+        height: 2123px;
+        font-size: 35px;
+      }
+      .logo-bineka-tunggal-ika-icon {
+        width: 68px;
+        position: relative;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon {
+        position: absolute;
+        height: 100%;
+        width: 51.04%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon {
+        position: absolute;
+        height: 100%;
+        width: 44.17%;
+        top: 0%;
+        right: 55.83%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih {
+        width: 187.9px;
+        position: relative;
+        height: 24px;
+      }
+      .logo-pindah-memilih {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px;
+        gap: 8px;
+      }
+      .explore {
+        position: relative;
+        line-height: 28px;
+      }
+      .text-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+      }
+      .text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 48px;
+      }
+      .divider {
+        align-self: stretch;
+        position: relative;
+        border-top: 1px solid #857372;
+        box-sizing: border-box;
+        height: 1px;
+      }
+      .pindah-memilih-merupakan {
+        width: 400px;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+        color: #3b080c;
+        text-align: justify;
+        display: inline-block;
+      }
+      .main-frame {
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 72px 108px;
+        box-sizing: border-box;
+        gap: 24px;
+      }
+      .footer {
+        width: 1440px;
+        background-color: #ffdad8;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+        font-size: 22px;
+        color: #2c1515;
+      }
+      .main {
+        position: absolute;
+        top: 224px;
+        left: 0px;
+        background-color: #fff;
+        width: 1440px;
+        height: 3335px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .group-child1 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: #904a4a;
+        width: 1440px;
+        height: 156px;
+      }
+      .rectangle-icon {
+        position: absolute;
+        top: 14px;
+        left: 582px;
+        border-radius: 20px;
+        width: 120px;
+        height: 120px;
+        mix-blend-mode: normal;
+      }
+      .group-child2 {
+        position: absolute;
+        top: 17px;
+        left: 800px;
+        border-radius: 20px;
+        width: 120px;
+        height: 120px;
+        mix-blend-mode: normal;
+      }
+      .group-child3 {
+        position: absolute;
+        top: 17px;
+        left: 1018px;
+        border-radius: 20px;
+        width: 120px;
+        height: 120px;
+        mix-blend-mode: normal;
+      }
+      .group-child4 {
+        position: absolute;
+        top: 17px;
+        left: 1236px;
+        border-radius: 20px;
+        width: 120px;
+        height: 120px;
+        mix-blend-mode: normal;
+      }
+      .days {
+        position: absolute;
+        top: 102px;
+        left: 622px;
+        font-size: 14px;
+        font-family: Roboto;
+        display: inline-block;
+        width: 39px;
+        height: 17px;
+      }
+      .hitung-mundur-pengumpulan {
+        position: absolute;
+        top: 28px;
+        left: 61px;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: Roboto;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        width: 433px;
+        height: 94px;
+      }
+      .div {
+        position: absolute;
+        top: 24px;
+        left: 606px;
+        display: inline-block;
+        width: 72px;
+        height: 53px;
+      }
+      .div1 {
+        position: absolute;
+        top: 24px;
+        left: 740px;
+        color: #fff;
+        display: inline-block;
+        width: 21px;
+        height: 78px;
+      }
+      .div2 {
+        position: absolute;
+        top: 24px;
+        left: 959px;
+        color: #fff;
+        display: inline-block;
+        width: 21px;
+        height: 78px;
+      }
+      .div3 {
+        position: absolute;
+        top: 24px;
+        left: 1176px;
+        color: #fff;
+        display: inline-block;
+        width: 21px;
+        height: 78px;
+      }
+      .div4 {
+        position: absolute;
+        top: 24px;
+        left: 819px;
+        display: inline-block;
+        width: 82px;
+        height: 53px;
+      }
+      .div5 {
+        position: absolute;
+        top: 24px;
+        left: 1039px;
+        display: inline-block;
+        width: 79px;
+        height: 53px;
+      }
+      .div6 {
+        position: absolute;
+        top: 24px;
+        left: 1255px;
+        display: inline-block;
+        width: 82px;
+        height: 53px;
+      }
+      .hours {
+        position: absolute;
+        top: 101px;
+        left: 834px;
+        font-size: 14px;
+        font-family: Roboto;
+        display: inline-block;
+        width: 51px;
+        height: 14px;
+      }
+      .minutes {
+        position: absolute;
+        top: 102px;
+        left: 1044px;
+        font-size: 14px;
+        font-family: Roboto;
+        display: inline-block;
+        width: 67px;
+        height: 14px;
+      }
+      .seconds {
+        position: absolute;
+        top: 102px;
+        left: 1262px;
+        font-size: 14px;
+        font-family: Roboto;
+        display: inline-block;
+        width: 67px;
+        height: 14px;
+      }
+      .rectangle-group {
+        position: absolute;
+        top: 68px;
+        left: 0px;
+        width: 1440px;
+        height: 156px;
+        font-size: 65px;
+        font-family: Inter;
+      }
+      .logo-bineka-tunggal-ika-icon1 {
+        width: 40px;
+        position: relative;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 51.02%;
+        top: 0%;
+        right: 0.02%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 44.19%;
+        top: 0%;
+        right: 55.81%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih1 {
+        width: 156.6px;
+        position: relative;
+        height: 20px;
+      }
+      .button-menu-beranda {
+        border-radius: 100px;
+        background-color: #ffdad8;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #2c1515;
+      }
+      .label-text2 {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+        opacity: 0.38;
+      }
+      .state-layer3 {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+      }
+      .button-menu-pengajuan {
+        border-radius: 100px;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .button-menu-informasi-pengajua {
+        border-radius: 100px;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #904a4a;
+      }
+      .divider1 {
+        width: 1px;
+        flex: 1;
+        position: relative;
+        border-right: 1px solid #d7c1c0;
+        box-sizing: border-box;
+      }
+      .vertical-divider {
+        width: 1px;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .masuk {
+        border-radius: 100px;
+        border: 1px solid #857372;
+        box-sizing: border-box;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .daftar {
+        border-radius: 100px;
+        background-color: #904a4a;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 2px;
+        box-sizing: border-box;
+        cursor: pointer;
+        color: #fff8f7;
+      }
+      .masuk-daftar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        color: #904a4a;
+      }
+      .header1 {
+        position: absolute;
+        width: 100%;
+        top: calc(50% - 34px);
+        right: 0px;
+        left: 0px;
+        height: 68px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 108px;
+        box-sizing: border-box;
+      }
+      .header {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        width: 1440px;
+        height: 68px;
+        text-align: center;
+        font-size: 16px;
+        color: #231919;
+      }
+      .beranda {
+        width: 100%;
+        position: relative;
+        background-color: #fff;
+        height: 900px;
+        /* overflow-y: auto; */
+        text-align: left;
+        font-size: 24px;
+        color: #000;
+        font-family: Roboto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="beranda">
+      <div class="main">
+        <div class="building-blockscard-statesou">
+          <div class="state-layer">
+            <div class="frame-parent">
+              <div class="bingung-untuk-melakukan-pemind-parent">
+                <div class="bingung-untuk-melakukan-container">
+                  <span class="bingung-untuk-melakukan-container1">
+                    <p class="bingung-untuk-melakukan">
+                      Bingung untuk melakukan pemindahan TPS karena sedang
+                      berada diluar domisili TPS?
+                    </p>
+                    <p class="bingung-untuk-melakukan">&nbsp;</p>
+                    <p class="bingung-untuk-melakukan">
+                      Ayo pindahkan pemilihan TPS Anda sekarang!
+                    </p>
+                  </span>
+                </div>
+                <div class="button">
+                  <div class="state-layer1">
+                    <div class="label-text">Ajukan pemindahan</div>
+                  </div>
+                </div>
+              </div>
+              <div class="voting-amico-1">
+                <div class="freepik-plants-inject-63">
+                  <img
+                    class="freepik-plants-inject-63-icon"
+                    alt=""
+                    src="freepik--plants--inject-63.svg"
+                  />
+
+                  <img
+                    class="freepik-plants-inject-63-icon1"
+                    alt=""
+                    src="freepik--plants--inject-63.svg"
+                  />
+                </div>
+                <img
+                  class="freepik-floor-inject-63-icon"
+                  alt=""
+                  src="freepik--Floor--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-shadows-inject-63-icon"
+                  alt=""
+                  src="freepik--Shadows--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-check-marks-inject-6-icon"
+                  alt=""
+                  src="freepik--check-marks--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-table-1-inject-63-icon"
+                  alt=""
+                  src="freepik--table-1--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-table-2-inject-63-icon"
+                  alt=""
+                  src="freepik--table-2--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-character-2-inject-6-icon"
+                  alt=""
+                  src="freepik--character-2--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-character-1-inject-6-icon"
+                  alt=""
+                  src="freepik--character-1--inject-63.svg"
+                />
+
+                <img
+                  class="freepik-speech-bubble-inject-icon"
+                  alt=""
+                  src="freepik--speech-bubble--inject-63.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="main-inner">
+          <div class="rectangle-parent">
+            <div class="group-child"></div>
+            <img class="midocument-icon" alt="" src="mi:document.svg" />
+
+            <div class="menunjukkan-ktp-el-atau-container">
+              <ol class="menunjukkan-ktp-el-atau-kk-mel">
+                <li class="menunjukkan-ktp-el-atau">
+                  Menunjukkan KTP-el atau KK
+                </li>
+                <li>
+                  Melampirkan salinan formulir Model A-Tanda Bukti Terdaftar
+                  sebagai Pemilih dalam DPT di TPS asal.
+                </li>
+              </ol>
+            </div>
+            <b class="persyaratan-yang-harus-container">
+              <p class="bingung-untuk-melakukan">
+                Persyaratan yang harus dibawa
+              </p>
+              <p class="bingung-untuk-melakukan">
+                saat melaporkan diri untuk pindah memilih
+              </p>
+            </b>
+            <div class="group-item"></div>
+            <div class="group-inner"></div>
+            <div class="rectangle-div"></div>
+            <div class="waktu-pemilih-melaporkan">
+              Waktu pemilih melaporkan diri untuk pindah memilih
+            </div>
+            <img class="vector-icon" alt="" src="Vector.svg" />
+
+            <div class="untuk-menggunakan-hak-container">
+              <span class="bingung-untuk-melakukan-container1">
+                <p class="bingung-untuk-melakukan">
+                  Untuk menggunakan hak pilihnya di TPS tujuan, Pemilih yang
+                  terdaftar dalam DPTb dapat melaporkan
+                </p>
+                <p class="bingung-untuk-melakukan">
+                  kepada PPS, PPK, atau KPU Kabupaten/Kota tempat asal atau
+                  tempat tujuan paling lambat 7 (tujuh)
+                </p>
+                <p class="bingung-untuk-melakukan">
+                  hari sebelum hari pemungutan suara.
+                </p>
+              </span>
+            </div>
+            <div class="datang-langsung-ke-container">
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Datang langsung ke Panitia Pemungutan Suara (PPS), Panitia
+                  Pemilihan Kecamatan (PPK) atau KPU Kabupaten/Kota
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Bawa bukti dukung alasan pindah memilih (Misalkan karena
+                  tugas, bawa surat tugas)
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  KPU akan memetakan TPS mana di sekitar tempat tujuan (masuk di
+                  Daftar Pemilih Tambahan atau DPTb)
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li>
+                  Pemilih diberikan bukti dari KPU berupa formulir A-Surat
+                  Pindah Memilih
+                </li>
+              </ol>
+            </div>
+            <div class="prosedur-mengajukan-pindah">
+              Prosedur mengajukan pindah memilih
+            </div>
+            <img class="vector-icon1" alt="" src="Vector.svg" />
+
+            <div class="jenis-pemilihan-yang">
+              Jenis pemilihan yang dapat dipilih
+            </div>
+            <img
+              class="vscode-iconsfile-type-light-t"
+              alt=""
+              src="vscode-icons:file-type-light-todo.svg"
+            />
+
+            <div class="calon-anggota-dpr-container">
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Calon anggota DPR jika pindah memilih ke kabupaten/kota lain
+                  di dalam 1 (satu) provinsi dan daerah pemilihan DPR;
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Calon anggota DPD jika pindah memilih ke kabupaten/kota lain
+                  di dalam 1 (satu) provinsi;
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Pasangan calon Presiden dan Wakil Presiden jika pindah memilih
+                  ke provinsi lain atau pindah memilih ke suatu negara;
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li class="menunjukkan-ktp-el-atau">
+                  Calon anggota DPRD Provinsi jika pindah memilih ke kecamatan
+                  atau kabupaten/kota lain di dalam 1 (satu) provinsi dan daerah
+                  pemilihan DPRD Provinsi; dan/atau
+                </li>
+              </ol>
+              <p class="bingung-untuk-melakukan">&nbsp;</p>
+              <ol class="datang-langsung-ke-panitia-pem">
+                <li>
+                  Calon anggota DPRD Kabupaten/Kota jika pindah memilih ke
+                  desa/kelurahan atau kecamatan lain di dalam 1 (satu)
+                  kabupaten/kota dan daerah pemilihan DPRD Kabupaten/Kota.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="main-frame">
+            <div class="logo-pindah-memilih">
+              <img
+                class="logo-bineka-tunggal-ika-icon"
+                alt=""
+                src="logo-bineka-tunggal-ika.png"
+              />
+
+              <div class="pindah-memilih">
+                <img class="memilih-icon" alt="" src="memilih.svg" />
+
+                <img class="pindah-icon" alt="" src="pindah.svg" />
+              </div>
+            </div>
+            <div class="text">
+              <div class="text-left">
+                <b class="explore">Explore</b>
+                <div class="explore">Tentang Pindah Memilih</div>
+                <div class="explore">Disclaimer</div>
+                <div class="explore">Tim Kami</div>
+              </div>
+              <div class="text-left">
+                <b class="explore">Hubungi Kami</b>
+                <div class="explore">contact@pindahmemilih.id</div>
+                <div class="explore">Instagram</div>
+                <div class="explore">Twitter</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="pindah-memilih-merupakan">
+              Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk
+              membantu masyarakat melakukan pemindahan TPS secara online.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-group">
+        <div class="group-child1"></div>
+        <img class="rectangle-icon" alt="" src="Rectangle 4.svg" />
+
+        <img class="group-child2" alt="" src="Rectangle 12.svg" />
+
+        <img class="group-child3" alt="" src="Rectangle 13.svg" />
+
+        <img class="group-child4" alt="" src="Rectangle 14.svg" />
+
+        <div class="days">DAYS</div>
+        <div class="hitung-mundur-pengumpulan">
+          Hitung Mundur Pengumpulan Berkas Pemindahan TPS
+        </div>
+        <div class="div">10</div>
+        <div class="div1">:</div>
+        <div class="div2">:</div>
+        <div class="div3">:</div>
+        <div class="div4">09</div>
+        <div class="div5">25</div>
+        <div class="div6">32</div>
+        <div class="hours">HOURS</div>
+        <div class="minutes">MINUTES</div>
+        <div class="seconds">
+          <p class="bingung-untuk-melakukan">SECONDS</p>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header1">
+          <div class="logo-pindah-memilih">
+            <img
+              class="logo-bineka-tunggal-ika-icon1"
+              alt=""
+              src="logo-bineka-tunggal-ika.png"
+            />
+
+            <div class="pindah-memilih1">
+              <img class="memilih-icon1" alt="" src="memilih.svg" />
+
+              <img class="pindah-icon1" alt="" src="pindah.svg" />
+            </div>
+          </div>
+          <div class="frame-parent">
+            <div class="button-menu-beranda">
+              <div class="state-layer1">
+                <div class="label-text">Beranda</div>
+              </div>
+            </div>
+            <div class="button-menu-pengajuan">
+              <div class="state-layer3">
+                <div class="label-text2">Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-pengajuan">
+              <div class="state-layer3">
+                <div class="label-text2">Status Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-informasi-pengajua">
+              <div class="state-layer3">
+                <div class="label-text">Informasi Pengajuan</div>
+              </div>
+            </div>
+            <div class="vertical-divider">
+              <div class="divider1"></div>
+            </div>
+            <div class="masuk-daftar">
+              <div class="masuk">
+                <div class="state-layer1">
+                  <div class="label-text">Masuk</div>
+                </div>
+              </div>
+              <div class="daftar" id="daftarContainer">
+                <div class="state-layer1">
+                  <div class="label-text">Daftar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var daftarContainer = document.getElementById("daftarContainer");
+      if (daftarContainer) {
+        daftarContainer.addEventListener("click", function (e) {
+          // Add your code here
+        });
+      }
+    </script>
+  </body>
+</html>

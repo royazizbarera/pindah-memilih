@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    />
+    <style>
+      .minimize-icon {
+        width: 24px;
+        position: relative;
+        height: 24px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .minimize-parent {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0px 8px;
+        gap: 8px;
+      }
+      .top {
+        align-self: stretch;
+        border-radius: 8px 8px 0px 0px;
+        background-color: #904a4a;
+        border-top: 1px solid #d7c1c0;
+        border-right: 1px solid #d7c1c0;
+        border-left: 1px solid #d7c1c0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-end;
+        padding: 8px 0px;
+      }
+      .httpswwwgooglecomfileju {
+        flex: 1;
+        position: relative;
+        line-height: 16.8px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 17px;
+      }
+      .url {
+        align-self: stretch;
+        background-color: #904a4a;
+        border: 1px solid #d7c1c0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 2px 24px;
+      }
+      .google-logo-icon {
+        width: 14px;
+        position: relative;
+        height: 14px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .sign-in-with {
+        flex: 1;
+        position: relative;
+        line-height: 20px;
+      }
+      .title-contents {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 16px;
+        gap: 12px;
+      }
+      .px-border-bottom {
+        align-self: stretch;
+        position: relative;
+        background-color: #dadce0;
+        height: 1px;
+      }
+      .title {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .logo-bineka-tunggal-ika-icon {
+        width: 40px;
+        position: relative;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .pindah-memilih-icon {
+        width: 62.6px;
+        position: relative;
+        height: 8px;
+      }
+      .logo-pindah-memilih {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2px 4px;
+      }
+      .company-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .choose-an-account {
+        align-self: stretch;
+        position: relative;
+        line-height: 32px;
+      }
+      .company {
+        font-weight: 500;
+        color: #1a73e8;
+      }
+      .to-continue-to-container {
+        align-self: stretch;
+        position: relative;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .header-text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .header {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 40px 0px;
+        gap: 16px;
+      }
+      .profile-picture1 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-radius: 50%;
+        background-color: #7b1fa2;
+        width: 28px;
+        height: 28px;
+      }
+      .r {
+        position: absolute;
+        top: 5px;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+      }
+      .profile-picture {
+        width: 28px;
+        position: relative;
+        height: 28px;
+      }
+      .roy-aziz-barera {
+        align-self: stretch;
+        position: relative;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .royazizbareragmailcom {
+        align-self: stretch;
+        position: relative;
+        font-size: 12px;
+        line-height: 16px;
+        color: #5f6368;
+      }
+      .account-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 14px;
+        color: #3c4043;
+      }
+      .account-details {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 12px 40px;
+        gap: 12px;
+      }
+      .px-border-bottom1 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 40px;
+      }
+      .account-option {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        cursor: pointer;
+      }
+      .account-icon1 {
+        width: 20px;
+        position: relative;
+        height: 20px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .account-icon {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 4px;
+      }
+      .use-another-account {
+        flex: 1;
+        position: relative;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .another-account-option1 {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 14px 40px;
+        gap: 12px;
+      }
+      .another-account-option {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 14px;
+        color: #3c4043;
+      }
+      .accounts-wrapper {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0px 1px;
+        font-size: 15px;
+        color: #fff;
+      }
+      .main-content {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        text-align: center;
+        font-size: 24px;
+        color: #202124;
+      }
+      .to-continue-google {
+        margin: 0;
+      }
+      .privacy-policy {
+        font-weight: 500;
+        font-family: Roboto;
+        color: #1a73e8;
+      }
+      .and {
+        font-family: Roboto;
+        color: #5f6368;
+      }
+      .terms-of-service {
+        font-weight: 500;
+      }
+      .privacy-policy-and-terms-of-se {
+        margin: 0;
+        color: #1a73e8;
+      }
+      .description {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 9px 40px 3px;
+      }
+      .english-united-states {
+        position: relative;
+        line-height: 16.8px;
+      }
+      .arrow-icon {
+        width: 8px;
+        position: relative;
+        height: 4px;
+      }
+      .language-option {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 8px 8px 16px;
+        gap: 8px;
+      }
+      .button-text {
+        position: relative;
+        line-height: 16.8px;
+        font-weight: 500;
+      }
+      .footer-button {
+        border-radius: 2px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 6px 16px;
+      }
+      .right-buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        color: #757575;
+      }
+      .footer {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        font-size: 12px;
+        color: #202124;
+      }
+      .account-choice-box {
+        width: 500px;
+        border-radius: 8px;
+        background-color: #fff;
+        border: 1px solid #dadce0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 0px 36px;
+        gap: 32px;
+        text-align: left;
+        font-size: 14px;
+        color: #5f6368;
+      }
+      .main-frame {
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .sign-in-with-google {
+        position: relative;
+        border-radius: 8px;
+        background-color: #fff8f7;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        font-family: Roboto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sign-in-with-google">
+      <div class="main-frame">
+        <div class="top">
+          <div class="minimize-parent">
+            <img class="minimize-icon" alt="" src="minimize.svg" />
+
+            <img class="minimize-icon" alt="" src="crop_square.svg" />
+
+            <img class="minimize-icon" alt="" src="close.svg" />
+          </div>
+        </div>
+        <div class="url">
+          <div class="httpswwwgooglecomfileju">
+            https://www.google.com/file/jUh4u7Tbhzg3Ioxd6aGDyv/v.1-Roy-Aziz-Barera---Pengajuan-Pindah-TPS?type=design&node-id=55872-4667&mode=design&t=wImbcExavJTIrsgb-0
+          </div>
+        </div>
+        <div class="account-choice-box">
+          <div class="title">
+            <div class="title-contents">
+              <img class="google-logo-icon" alt="" src="Google Logo.svg" />
+
+              <div class="sign-in-with">Sign in with Google</div>
+            </div>
+            <div class="px-border-bottom"></div>
+          </div>
+          <div class="main-content">
+            <div class="header">
+              <div class="company-logo">
+                <div class="logo-pindah-memilih">
+                  <img
+                    class="logo-bineka-tunggal-ika-icon"
+                    alt=""
+                    src="logo-bineka-tunggal-ika.png"
+                  />
+
+                  <img
+                    class="pindah-memilih-icon"
+                    alt=""
+                    src="pindah-memilih.svg"
+                  />
+                </div>
+              </div>
+              <div class="header-text">
+                <div class="choose-an-account">Choose an account</div>
+                <div class="to-continue-to-container">
+                  <span>to continue to</span>
+                  <span class="company"> Company</span>
+                </div>
+              </div>
+            </div>
+            <div class="accounts-wrapper">
+              <div class="account-option" id="accountOptionContainer">
+                <div class="account-details">
+                  <div class="profile-picture">
+                    <div class="profile-picture1"></div>
+                    <div class="r">R</div>
+                  </div>
+                  <div class="account-info">
+                    <div class="roy-aziz-barera">Roy Aziz Barera</div>
+                    <div class="royazizbareragmailcom">
+                      royazizbarera@gmail.com
+                    </div>
+                  </div>
+                </div>
+                <div class="px-border-bottom1">
+                  <div class="px-border-bottom"></div>
+                </div>
+              </div>
+              <div class="another-account-option">
+                <div class="another-account-option1">
+                  <div class="account-icon">
+                    <img class="account-icon1" alt="" src="Account Icon.svg" />
+                  </div>
+                  <div class="use-another-account">Use another account</div>
+                </div>
+                <div class="px-border-bottom1">
+                  <div class="px-border-bottom"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="description">
+            <div class="sign-in-with">
+              <p class="to-continue-google">
+                To continue, Google will share your name, email address,
+                language preference, and profile picture with Company. Before
+                using this app, you can review Company’s
+              </p>
+              <p class="privacy-policy-and-terms-of-se">
+                <span class="privacy-policy">privacy policy</span>
+                <span class="and"> and </span>
+                <span class="terms-of-service">terms of service</span>
+                <span class="and">.</span>
+              </p>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="language-option">
+              <div class="english-united-states">English (United States)</div>
+              <img class="arrow-icon" alt="" src="Arrow.svg" />
+            </div>
+            <div class="right-buttons">
+              <div class="footer-button">
+                <div class="button-text">Help</div>
+              </div>
+              <div class="footer-button">
+                <div class="button-text">Privacy</div>
+              </div>
+              <div class="footer-button">
+                <div class="button-text">Terms</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var accountOptionContainer = document.getElementById(
+        "accountOptionContainer"
+      );
+      if (accountOptionContainer) {
+        accountOptionContainer.addEventListener("click", function (e) {
+          // Add your code here
+        });
+      }
+    </script>
+  </body>
+</html>

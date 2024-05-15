@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <style>
+      .hai-warga-negara-indonesia-ya {
+        margin: 0;
+        font-size: 20px;
+      }
+      .apakah-anda-ingin {
+        margin: 0;
+      }
+      .isi-formulir-dengan-informasi {
+        margin-bottom: 0px;
+      }
+      .pastikan-anda-memenuhi-syarat {
+        margin: 0;
+        padding-left: 19px;
+      }
+      .hai-warga-negara-container {
+        align-self: stretch;
+        position: relative;
+        letter-spacing: 0.25px;
+        line-height: 30px;
+      }
+      .header-form {
+        width: 872px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        background-color: #fceae9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+      }
+      .pendaftaran-pengajuan {
+        position: relative;
+        line-height: 40px;
+      }
+      .label-text1 {
+        position: relative;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+      }
+      .label-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .content {
+        flex: 1;
+        height: 48px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 4px 0px;
+        box-sizing: border-box;
+      }
+      .state-layer {
+        align-self: stretch;
+        flex: 1;
+        border-radius: 4px 4px 0px 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 4px 0px 4px 16px;
+      }
+      .text-field {
+        align-self: stretch;
+        flex: 1;
+        border-radius: 4px;
+        border: 1px solid #857372;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .nama-lengkap {
+        width: 400px;
+        border-radius: 4px 4px 0px 0px;
+        height: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .title {
+        position: relative;
+        letter-spacing: 0.4px;
+        line-height: 16px;
+      }
+      .icon {
+        width: 18px;
+        position: relative;
+        height: 18px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .label-text10 {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .state-layer5 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 12px 6px 8px;
+        gap: 8px;
+      }
+      .input-chip {
+        width: 400px;
+        border-radius: 8px;
+        border: 1px solid #857372;
+        box-sizing: border-box;
+        height: 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 16px;
+        color: #524343;
+      }
+      .upload-file {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      .thumbnail-icon {
+        align-self: stretch;
+        flex: 1;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        object-fit: cover;
+      }
+      .preview-file-upload {
+        width: 240px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        height: 138px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .upload-foto-ktpkk {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+        font-size: 12px;
+        color: #3b080c;
+      }
+      .form-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+      }
+      .upload-formulir-model-a {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+        font-size: 12px;
+      }
+      .alasan-pindah {
+        width: 400px;
+        border-radius: 4px 4px 0px 0px;
+        height: 56px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        color: #524343;
+      }
+      .container {
+        width: 18px;
+        position: relative;
+        border-radius: 2px;
+        border: 2px solid #524343;
+        box-sizing: border-box;
+        height: 18px;
+      }
+      .state-layer9 {
+        border-radius: 100px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 11px;
+      }
+      .checkboxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+      }
+      .saya-menyetujui-syarat {
+        flex: 1;
+        position: relative;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+      }
+      .persetujuan {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 4px 0px;
+        box-sizing: border-box;
+        gap: 8px;
+      }
+      .label-text15 {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+        opacity: 0.38;
+      }
+      .state-layer10 {
+        align-self: stretch;
+        flex: 1;
+        background-color: rgba(29, 27, 32, 0.12);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+      }
+      .kirim {
+        border-radius: 100px;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #231919;
+      }
+      .form-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+        color: #3b080c;
+      }
+      .form1 {
+        width: 872px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 24px 0px;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 16px;
+        color: #524343;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        text-align: center;
+        font-size: 32px;
+      }
+      .form-pendaftaran {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px;
+        gap: 24px;
+      }
+      .logo-bineka-tunggal-ika-icon {
+        width: 68px;
+        position: relative;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon {
+        position: absolute;
+        height: 100%;
+        width: 51.04%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon {
+        position: absolute;
+        height: 100%;
+        width: 44.17%;
+        top: 0%;
+        right: 55.83%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih {
+        width: 187.9px;
+        position: relative;
+        height: 24px;
+      }
+      .logo-pindah-memilih {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px;
+        gap: 8px;
+      }
+      .explore {
+        position: relative;
+        line-height: 28px;
+      }
+      .text-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+      }
+      .text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 48px;
+      }
+      .divider {
+        align-self: stretch;
+        position: relative;
+        border-top: 1px solid #857372;
+        box-sizing: border-box;
+        height: 1px;
+      }
+      .pindah-memilih-merupakan {
+        width: 400px;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+        color: #3b080c;
+        text-align: justify;
+        display: inline-block;
+      }
+      .main-frame {
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 72px 108px;
+        box-sizing: border-box;
+        gap: 24px;
+      }
+      .footer {
+        width: 1440px;
+        background-color: #ffdad8;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: center;
+        font-size: 22px;
+        color: #2c1515;
+      }
+      .main {
+        position: absolute;
+        top: 68px;
+        left: 0px;
+        background-color: #fff;
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 72px;
+        box-sizing: border-box;
+        gap: 48px;
+      }
+      .logo-bineka-tunggal-ika-icon1 {
+        width: 40px;
+        position: relative;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 51.02%;
+        top: 0%;
+        right: 0.02%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 44.19%;
+        top: 0%;
+        right: 55.81%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih1 {
+        width: 156.6px;
+        position: relative;
+        height: 20px;
+      }
+      .state-layer11 {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+      }
+      .button-menu-beranda {
+        border-radius: 100px;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .state-layer12 {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+      }
+      .button-menu-pengajuan {
+        border-radius: 100px;
+        background-color: #ffdad8;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #2c1515;
+      }
+      .divider1 {
+        width: 1px;
+        flex: 1;
+        position: relative;
+        border-right: 1px solid #d7c1c0;
+        box-sizing: border-box;
+      }
+      .vertical-divider {
+        width: 1px;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .user-imagesuser-images {
+        width: 24px;
+        position: relative;
+        border-radius: 100px;
+        height: 24px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .state-layer15 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 12px 4px 4px;
+        gap: 8px;
+      }
+      .akun {
+        width: 170px;
+        border-radius: 30px;
+        border: 1px solid #857372;
+        box-sizing: border-box;
+        height: 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: #231919;
+      }
+      .iconssettings-24px {
+        width: 24px;
+        position: relative;
+        height: 24px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      .header1 {
+        position: absolute;
+        width: 100%;
+        top: calc(50% - 34px);
+        right: 0px;
+        left: 0px;
+        height: 68px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 108px;
+        box-sizing: border-box;
+      }
+      .header {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 720px);
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        width: 1440px;
+        height: 68px;
+        text-align: center;
+        font-size: 16px;
+        color: #904a4a;
+      }
+      .pengajuan {
+        width: 100%;
+        position: relative;
+        height: 900px;
+        overflow-y: auto;
+        text-align: left;
+        font-size: 14px;
+        color: #3b080c;
+        font-family: Roboto;
+      }
+
+      .image-keterangan-pindah {
+        width: 400px;
+        position: relative;
+        height: 600px;
+        object-fit: cover;
+      }
+      .preview-file-upload-keterangan {
+        position: relative;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+      }
+
+      .image-form-model-a {
+        align-self: stretch;
+        flex: 1;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        object-fit: cover;
+      }
+      .preview-file-upload3 {
+        width: 400px;
+        position: relative;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+      }
+
+      .image-ktp-icon {
+        align-self: stretch;
+        flex: 1;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+        object-fit: cover;
+      }
+      .preview-file-upload-ktp {
+        width: 900px;
+        position: relative;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        height: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+      }
+
+      body {
+        margin: 0;
+        line-height: normal;
+      }
+
+      .popup-overlay {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pengajuan">
+      <div class="main">
+        <div class="form-pendaftaran">
+          <div class="header-form">
+            <div class="hai-warga-negara-container">
+              <p class="hai-warga-negara-indonesia-ya">
+                <b>Hai, Warga Negara Indonesia yang terhormat! </b>
+              </p>
+              <p class="apakah-anda-ingin">
+                Apakah Anda ingin memilih di Pemilu, tetapi tidak memungkinkan
+                untuk memilih di TPS Anda yang dulu? Kami siap membantu Anda
+                untuk memindahkan TPS Anda!
+              </p>
+              <li class="apakah-anda-ingin">
+                <span
+                  >Sebelum Anda mengisi formulir pemindahan TPS, mohon
+                  perhatikan beberapa hal berikut:
+                </span>
+              </li>
+              <ol class="pastikan-anda-memenuhi-syarat">
+                <li class="apakah-anda-ingin">
+                  <span
+                    >Pastikan Anda memenuhi syarat pemindahan TPS sesuai dengan
+                    peraturan yang berlaku.</span
+                  >
+                </li>
+                <li class="isi-formulir-dengan-informasi">
+                  <span
+                    >Isi formulir dengan informasi yang benar dan jelas untuk
+                    mempermudah proses verifikasi.</span
+                  >
+                </li>
+                <li class="isi-formulir-dengan-informasi">
+                  <span
+                    >Mohon tunggu konfirmasi dari kami setelah mengirimkan
+                    formulir.</span
+                  >
+                </li>
+              </ol>
+              <p class="apakah-anda-ingin">
+                Kami berkomitmen untuk membantu Anda dalam proses pemindahan TPS
+                agar Anda dapat menggunakan hak pilih Anda dengan mudah dan
+                nyaman.
+              </p>
+            </div>
+          </div>
+          <div class="form">
+            <div class="pendaftaran-pengajuan">Pendaftaran Pengajuan</div>
+            <div class="form1">
+              <div class="form-left">
+                <div class="nama-lengkap">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Nama Lengkap</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nama-lengkap">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Nomor Induk Keluarga</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nama-lengkap">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Tempat/Tanggal Lahir</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nama-lengkap">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Alamat</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="nama-lengkap">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Agama</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="upload-foto-ktpkk">
+                  <div class="upload-file">
+                    <div class="title">Foto KTP/KK</div>
+                    <div class="input-chip">
+                      <div class="state-layer5">
+                        <img class="icon" alt="" src="Icon.svg" />
+
+                        <div class="label-text10">Tambahkan File</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="preview-file-upload"
+                    id="previewFileUploadContainer"
+                  >
+                    <img class="thumbnail-icon" alt="" src="Thumbnail.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-right">
+                <div class="upload-formulir-model-a">
+                  <div class="upload-file">
+                    <div class="title">
+                      Formulir Model A (*Bukti terdaftar pemilih di DPT)
+                    </div>
+                    <div class="input-chip">
+                      <div class="state-layer5">
+                        <img class="icon" alt="" src="Icon.svg" />
+
+                        <div class="label-text10">Tambahkan File</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="preview-file-upload"
+                    id="previewFileUploadContainer"
+                  >
+                    <img class="thumbnail-icon" alt="" src="Thumbnail.png" />
+                  </div>
+                </div>
+                <div class="alasan-pindah">
+                  <div class="text-field">
+                    <div class="state-layer">
+                      <div class="content">
+                        <div class="label-text">
+                          <div class="label-text1">Alasan Pindah</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="upload-formulir-model-a">
+                  <div class="upload-file">
+                    <div class="title">Dokumen Pendukung Alasan Pindah</div>
+                    <div class="input-chip">
+                      <div class="state-layer5">
+                        <img class="icon" alt="" src="Icon.svg" />
+
+                        <div class="label-text10">Tambahkan File</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="preview-file-upload"
+                    id="previewFileUploadContainer"
+                  >
+                    <img class="thumbnail-icon" alt="" src="Thumbnail.png" />
+                  </div>
+                </div>
+                <div class="persetujuan">
+                  <div class="checkboxes">
+                    <div class="state-layer9">
+                      <div class="container"></div>
+                    </div>
+                  </div>
+                  <div class="saya-menyetujui-syarat">
+                    Saya menyetujui syarat dan ketentuan yang berlaku
+                  </div>
+                </div>
+                <div class="kirim">
+                  <div class="state-layer10">
+                    <div class="label-text15">Kirim</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="main-frame">
+            <div class="logo-pindah-memilih">
+              <img
+                class="logo-bineka-tunggal-ika-icon"
+                alt=""
+                src="logo-bineka-tunggal-ika.png"
+              />
+
+              <div class="pindah-memilih">
+                <img class="memilih-icon" alt="" src="memilih.svg" />
+
+                <img class="pindah-icon" alt="" src="pindah.svg" />
+              </div>
+            </div>
+            <div class="text">
+              <div class="text-left">
+                <b class="explore">Explore</b>
+                <div class="explore">Tentang Pindah Memilih</div>
+                <div class="explore">Disclaimer</div>
+                <div class="explore">Tim Kami</div>
+              </div>
+              <div class="text-left">
+                <b class="explore">Hubungi Kami</b>
+                <div class="explore">contact@pindahmemilih.id</div>
+                <div class="explore">Instagram</div>
+                <div class="explore">Twitter</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="pindah-memilih-merupakan">
+              Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk
+              membantu masyarakat melakukan pemindahan TPS secara online.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header1">
+          <div class="logo-pindah-memilih">
+            <img
+              class="logo-bineka-tunggal-ika-icon1"
+              alt=""
+              src="logo-bineka-tunggal-ika.png"
+            />
+
+            <div class="pindah-memilih1">
+              <img class="memilih-icon1" alt="" src="memilih.svg" />
+
+              <img class="pindah-icon1" alt="" src="pindah.svg" />
+            </div>
+          </div>
+          <div class="menu">
+            <div class="button-menu-beranda">
+              <div class="state-layer11">
+                <div class="label-text10">Beranda</div>
+              </div>
+            </div>
+            <div class="button-menu-pengajuan">
+              <div class="state-layer12">
+                <div class="label-text10">Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-beranda">
+              <div class="state-layer11">
+                <div class="label-text10">Status Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-beranda">
+              <div class="state-layer11">
+                <div class="label-text10">Informasi Pengajuan</div>
+              </div>
+            </div>
+            <div class="vertical-divider">
+              <div class="divider1"></div>
+            </div>
+            <div class="akun">
+              <div class="state-layer15">
+                <img
+                  class="user-imagesuser-images"
+                  alt=""
+                  src="User images/User Images.svg"
+                />
+
+                <div class="label-text10">Roy Aziz Barera</div>
+              </div>
+            </div>
+            <img
+              class="iconssettings-24px"
+              alt=""
+              src="Icons/settings_24px.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="previewFileUploadKtpContainer"
+      class="popup-overlay"
+      style="display: none"
+    >
+      <div class="preview-file-upload-ktp">
+        <img class="image-ktp-icon" alt="" src="image ktp.png" />
+      </div>
+    </div>
+
+    <div
+      id="previewFileUploadContainer"
+      class="popup-overlay"
+      style="display: none"
+    >
+      <div class="preview-file-upload3">
+        <img class="image-form-model-a" alt="" src="image form model a.png" />
+      </div>
+    </div>
+
+    <div
+      id="previewFileUploadKeteranganContainer"
+      class="popup-overlay"
+      style="display: none"
+    >
+      <div class="preview-file-upload-keterangan">
+        <img
+          class="image-keterangan-pindah"
+          alt=""
+          src="image keterangan pindah.png"
+        />
+      </div>
+    </div>
+
+    <script>
+      var previewFileUploadContainer = document.getElementById(
+        "previewFileUploadContainer"
+      );
+      if (previewFileUploadContainer) {
+        previewFileUploadContainer.addEventListener("click", function () {
+          var popup = document.getElementById("previewFileUploadKtpContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var previewFileUploadContainer = document.getElementById(
+        "previewFileUploadContainer"
+      );
+      if (previewFileUploadContainer) {
+        previewFileUploadContainer.addEventListener("click", function () {
+          var popup = document.getElementById("previewFileUploadContainer");
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+
+      var previewFileUploadContainer = document.getElementById(
+        "previewFileUploadContainer"
+      );
+      if (previewFileUploadContainer) {
+        previewFileUploadContainer.addEventListener("click", function () {
+          var popup = document.getElementById(
+            "previewFileUploadKeteranganContainer"
+          );
+          if (!popup) return;
+          var popupStyle = popup.style;
+          if (popupStyle) {
+            popupStyle.display = "flex";
+            popupStyle.zIndex = 100;
+            popupStyle.backgroundColor = "rgba(113, 113, 113, 0.3)";
+            popupStyle.alignItems = "center";
+            popupStyle.justifyContent = "center";
+          }
+          popup.setAttribute("closable", "");
+
+          var onClick =
+            popup.onClick ||
+            function (e) {
+              if (e.target === popup && popup.hasAttribute("closable")) {
+                popupStyle.display = "none";
+              }
+            };
+          popup.addEventListener("click", onClick);
+        });
+      }
+    </script>
+  </body>
+</html>

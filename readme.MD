@@ -1,0 +1,1 @@
+Resolusi: 1440p (Lebar)

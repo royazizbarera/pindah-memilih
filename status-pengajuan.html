@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+    />
+
+    <style>
+      .formulir-pendaftaran-pengajuan {
+        align-self: stretch;
+        position: relative;
+        letter-spacing: 0.25px;
+        line-height: 30px;
+      }
+      .label-text {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+        white-space: pre-wrap;
+      }
+      .state-layer {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+      }
+      .button {
+        border-radius: 100px;
+        background-color: #904a4a;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #fff8f7;
+      }
+      .header-form {
+        width: 872px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        background-color: #fceae9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px;
+        box-sizing: border-box;
+        gap: 10px;
+      }
+      .form-pendaftaran {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 24px;
+      }
+      .building-blocks {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 697px);
+        border-radius: 16px;
+        background-color: #fff0ef;
+        width: 1394px;
+        height: 669px;
+      }
+      .frame-child {
+        width: 64px;
+        position: relative;
+        border-radius: 50%;
+        background-color: #efa368;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        height: 64px;
+      }
+      .frame-item {
+        width: 250px;
+        position: relative;
+        height: 1.7px;
+        object-fit: contain;
+      }
+      .frame-inner {
+        width: 64px;
+        position: relative;
+        border-radius: 50%;
+        background-color: #d9d9d9;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        height: 64px;
+      }
+      .ellipse-parent {
+        position: absolute;
+        top: 51px;
+        left: calc(50% - 474px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+      .verifikasi-dokumen {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        font-weight: 500;
+      }
+      .menunggu-persetujuan {
+        position: absolute;
+        top: 0px;
+        left: 291px;
+        font-weight: 500;
+      }
+      .pencarian-tps {
+        position: absolute;
+        top: 0px;
+        left: 656px;
+        font-weight: 500;
+      }
+      .pengajuan-selesai {
+        position: absolute;
+        top: 0px;
+        left: 953px;
+        font-weight: 500;
+      }
+      .verifikasi-dokumen-parent {
+        position: absolute;
+        top: 0px;
+        left: 58px;
+        width: 1128px;
+        height: 24px;
+      }
+      .building-blocks1 {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        background-color: #e6bdbb;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        width: 300px;
+        height: 134px;
+      }
+      .memverifikasi-dokumen-pemilih {
+        margin: 0;
+      }
+      .memverifikasi-dokumen-pemilih-container {
+        position: absolute;
+        top: calc(50% - 40.05px);
+        left: calc(50% - 131.14px);
+        font-weight: 500;
+        display: inline-block;
+        width: 261.4px;
+        height: 80.1px;
+      }
+      .building-blocks-group {
+        position: absolute;
+        top: 203px;
+        left: 0px;
+        width: 300px;
+        height: 134px;
+        text-align: center;
+      }
+      .expand-arrow-icon {
+        position: absolute;
+        top: 136px;
+        left: 122px;
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+      }
+      .frame-parent {
+        position: absolute;
+        top: 198px;
+        left: calc(50% - 597px);
+        width: 1186px;
+        height: 337px;
+      }
+      .building-blocks-parent {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 697px);
+        width: 1394px;
+        height: 669px;
+      }
+      .progres-1 {
+        width: 1394px;
+        position: relative;
+        height: 669px;
+        text-align: left;
+        color: #000;
+        font-family: Inter;
+      }
+      .logo-bineka-tunggal-ika-icon {
+        width: 68px;
+        position: relative;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon {
+        position: absolute;
+        height: 100%;
+        width: 51.04%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon {
+        position: absolute;
+        height: 100%;
+        width: 44.17%;
+        top: 0%;
+        right: 55.83%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih {
+        width: 187.9px;
+        position: relative;
+        height: 24px;
+      }
+      .logo-pindah-memilih {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 6px;
+        gap: 8px;
+      }
+      .explore {
+        position: relative;
+        line-height: 28px;
+      }
+      .text-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 24px;
+      }
+      .text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 48px;
+      }
+      .divider {
+        align-self: stretch;
+        position: relative;
+        border-top: 1px solid #857372;
+        box-sizing: border-box;
+        height: 1px;
+      }
+      .pindah-memilih-merupakan {
+        width: 400px;
+        position: relative;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        line-height: 24px;
+        color: #3b080c;
+        text-align: justify;
+        display: inline-block;
+      }
+      .main-frame {
+        width: 1440px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 72px 108px;
+        box-sizing: border-box;
+        gap: 24px;
+      }
+      .footer {
+        width: 1440px;
+        background-color: #ffdad8;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: 22px;
+        color: #2c1515;
+      }
+      .main {
+        position: absolute;
+        top: 68px;
+        left: 0px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 48px;
+      }
+      .logo-bineka-tunggal-ika-icon1 {
+        width: 40px;
+        position: relative;
+        height: 40px;
+        overflow: hidden;
+        flex-shrink: 0;
+        object-fit: contain;
+      }
+      .memilih-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 51.02%;
+        top: 0%;
+        right: 0.02%;
+        bottom: 0%;
+        left: 48.96%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-icon1 {
+        position: absolute;
+        height: 100%;
+        width: 44.19%;
+        top: 0%;
+        right: 55.81%;
+        bottom: 0%;
+        left: 0%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 100%;
+      }
+      .pindah-memilih1 {
+        width: 156.6px;
+        position: relative;
+        height: 20px;
+      }
+      .label-text1 {
+        position: relative;
+        letter-spacing: 0.1px;
+        line-height: 20px;
+        font-weight: 500;
+      }
+      .state-layer1 {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 12px;
+      }
+      .button-menu-beranda {
+        border-radius: 100px;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .button-menu-status-pengajuan {
+        border-radius: 100px;
+        background-color: #ffdad8;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #2c1515;
+      }
+      .divider1 {
+        width: 1px;
+        flex: 1;
+        position: relative;
+        border-right: 1px solid #d7c1c0;
+        box-sizing: border-box;
+      }
+      .vertical-divider {
+        width: 1px;
+        height: 68px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .user-imagesuser-images {
+        width: 24px;
+        position: relative;
+        border-radius: 100px;
+        height: 24px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .state-layer5 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 12px 4px 4px;
+        gap: 8px;
+      }
+      .akun {
+        width: 170px;
+        border-radius: 30px;
+        border: 1px solid #857372;
+        box-sizing: border-box;
+        height: 32px;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: #231919;
+      }
+      .iconssettings-24px {
+        width: 24px;
+        position: relative;
+        height: 24px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+      }
+      .header1 {
+        position: absolute;
+        width: 100%;
+        top: calc(50% - 34px);
+        right: 0px;
+        left: 0px;
+        height: 68px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 108px;
+        box-sizing: border-box;
+      }
+      .header {
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 720px);
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3),
+          0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+        width: 1440px;
+        height: 68px;
+        font-size: 16px;
+        color: #904a4a;
+      }
+      .status-pengajuan {
+        width: 100%;
+        position: relative;
+        height: 900px;
+        overflow-y: auto;
+        text-align: center;
+        font-size: 20px;
+        color: #3b080c;
+        font-family: Roboto;
+      }
+
+      body {
+        margin: 0;
+        line-height: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="status-pengajuan">
+      <div class="main">
+        <div class="form-pendaftaran">
+          <div class="header-form">
+            <b class="formulir-pendaftaran-pengajuan"
+              >Formulir pendaftaran pengajuan berhasil diajukan</b
+            >
+            <div class="button">
+              <div class="state-layer">
+                <div class="label-text">Lihat formulir pengajuan</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="progres-1">
+          <div class="building-blocks-parent">
+            <div class="building-blocks"></div>
+            <div class="frame-parent">
+              <div class="ellipse-parent">
+                <div class="frame-child"></div>
+                <img class="frame-item" alt="" src="Line 1.svg" />
+
+                <div class="frame-inner"></div>
+                <img class="frame-item" alt="" src="Line 2.svg" />
+
+                <div class="frame-inner"></div>
+                <img class="frame-item" alt="" src="Line 3.svg" />
+
+                <div class="frame-inner"></div>
+              </div>
+              <div class="verifikasi-dokumen-parent">
+                <div class="verifikasi-dokumen">Verifikasi Dokumen</div>
+                <div class="menunggu-persetujuan">Menunggu Persetujuan</div>
+                <div class="pencarian-tps">Pencarian TPS</div>
+                <div class="pengajuan-selesai">Pengajuan Selesai</div>
+              </div>
+              <div class="building-blocks-group">
+                <div class="building-blocks1"></div>
+                <div class="memverifikasi-dokumen-pemilih-container">
+                  <p class="memverifikasi-dokumen-pemilih">
+                    Memverifikasi dokumen pemilih,
+                  </p>
+                  <p class="memverifikasi-dokumen-pemilih">Perkiraan 5 menit</p>
+                </div>
+              </div>
+              <img class="expand-arrow-icon" alt="" src="Expand Arrow.png" />
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="main-frame">
+            <div class="logo-pindah-memilih">
+              <img
+                class="logo-bineka-tunggal-ika-icon"
+                alt=""
+                src="logo-bineka-tunggal-ika.png"
+              />
+
+              <div class="pindah-memilih">
+                <img class="memilih-icon" alt="" src="memilih.svg" />
+
+                <img class="pindah-icon" alt="" src="pindah.svg" />
+              </div>
+            </div>
+            <div class="text">
+              <div class="text-left">
+                <b class="explore">Explore</b>
+                <div class="explore">Tentang Pindah Memilih</div>
+                <div class="explore">Disclaimer</div>
+                <div class="explore">Tim Kami</div>
+              </div>
+              <div class="text-left">
+                <b class="explore">Hubungi Kami</b>
+                <div class="explore">contact@pindahmemilih.id</div>
+                <div class="explore">Instagram</div>
+                <div class="explore">Twitter</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="pindah-memilih-merupakan">
+              Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk
+              membantu masyarakat melakukan pemindahan TPS secara online.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header1">
+          <div class="logo-pindah-memilih">
+            <img
+              class="logo-bineka-tunggal-ika-icon1"
+              alt=""
+              src="logo-bineka-tunggal-ika.png"
+            />
+
+            <div class="pindah-memilih1">
+              <img class="memilih-icon1" alt="" src="memilih.svg" />
+
+              <img class="pindah-icon1" alt="" src="pindah.svg" />
+            </div>
+          </div>
+          <div class="menu">
+            <div class="button-menu-beranda">
+              <div class="state-layer1">
+                <div class="label-text1">Beranda</div>
+              </div>
+            </div>
+            <div class="button-menu-beranda">
+              <div class="state-layer1">
+                <div class="label-text1">Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-status-pengajuan">
+              <div class="state-layer">
+                <div class="label-text1">Status Pengajuan</div>
+              </div>
+            </div>
+            <div class="button-menu-beranda">
+              <div class="state-layer1">
+                <div class="label-text1">Informasi Pengajuan</div>
+              </div>
+            </div>
+            <div class="vertical-divider">
+              <div class="divider1"></div>
+            </div>
+            <div class="akun">
+              <div class="state-layer5">
+                <img
+                  class="user-imagesuser-images"
+                  alt=""
+                  src="User images/User Images.svg"
+                />
+
+                <div class="label-text1">Roy Aziz Barera</div>
+              </div>
+            </div>
+            <img
+              class="iconssettings-24px"
+              alt=""
+              src="Icons/settings_24px.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
