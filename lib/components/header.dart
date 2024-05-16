@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pindah_memilih/components/header_state.dart';
 import 'package:pindah_memilih/constants.dart';
+import 'package:provider/provider.dart';
 
 class Header extends StatefulWidget {
-  final int selectedItem;
-
-  const Header({super.key, required this.selectedItem});
+  const Header({super.key});
 
   @override
   State<Header> createState() => _HeaderState();
@@ -23,7 +23,24 @@ class _HeaderState extends State<Header> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.onPrimary,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            offset: const Offset(0, 1),
+            blurRadius: 2,
+            spreadRadius: 0,
+          ),
+          BoxShadow(
+            color: Colors.black.withOpacity(0.15),
+            offset: const Offset(0, 1),
+            blurRadius: 3,
+            spreadRadius: 1,
+          ),
+        ],
+      ),
       height: heightHeader,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: mainPadding),
@@ -64,32 +81,21 @@ class _HeaderState extends State<Header> {
   }
 
   Function()? _onPressedMenu(index) {
-    switch (index) {
-      case 0:
-        return () {};
-      case 1:
-        if (!isLogin) {
-          return null;
-        }
-      case 2:
-        if (!isLogin) {
-          return null;
-        }
-
-      case 3:
-        return () {};
-      default:
-        return null;
+    if ((index == 1 || index == 2) && !isLogin) {
+      return null;
     }
-    return null;
+    return () {
+      Provider.of<HeaderState>(context, listen: false).setIndex(index);
+    };
   }
 
   // Menu
   Widget menu() {
+    int selectedItem = Provider.of<HeaderState>(context).selectedIndex;
     return Row(
       children: [
         for (int item = 0; item < menuItems.length; item++) ...[
-          item == widget.selectedItem
+          item == selectedItem
               ? FilledButton.tonal(
                   onPressed: _onPressedMenu(item),
                   child: Text(menuItems[item]),
@@ -144,9 +150,14 @@ class _HeaderState extends State<Header> {
                 value: 0,
                 child: Text('Profil'),
               ),
-              const PopupMenuItem<int>(
+              PopupMenuItem<int>(
                 value: 1,
-                child: Text('Keluar'),
+                child: const Text('Keluar'),
+                onTap: () {
+                  setState(() {
+                    isLogin = false;
+                  });
+                },
               ),
             ],
           ),
@@ -175,50 +186,5 @@ class _HeaderState extends State<Header> {
         ),
       ],
     );
-  }
-}
-
-class MenuState extends ChangeNotifier {
-  int _activeMenu = 0;
-
-  int get activeMenu => _activeMenu;
-
-  void updateMenu(int index) {
-    _activeMenu = index;
-    notifyListeners();
-  }
-
-  onPressedMenu(context, int index, bool isLogin) {
-    switch (index) {
-      case 0:
-        return Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const Beranda()),
-        );
-      case 1:
-        if (!isLogin) {
-          return null;
-        }
-      case 2:
-        if (!isLogin) {
-          return null;
-        }
-
-      case 3:
-        return Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const Beranda()),
-        );
-      default:
-    }
-  }
-}
-
-class Beranda extends StatelessWidget {
-  const Beranda({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
