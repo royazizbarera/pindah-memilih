@@ -11,7 +11,7 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
-  double heightHeader = 64.0;
+  double heightHeader = 68.0;
   bool isLogin = true;
   String username = 'Roy Aziz Barera';
   List<String> menuItems = [
@@ -24,6 +24,7 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: heightHeader,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.onPrimary,
         boxShadow: [
@@ -41,7 +42,6 @@ class _HeaderState extends State<Header> {
           ),
         ],
       ),
-      height: heightHeader,
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: mainPadding),
         child: Row(

@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_picker_web: ^3.1.1
   provider: ^6.1.2
 
 dev_dependencies:
@@ -19,5 +20,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    # - assets/images/
-    - assets/images/logo-pindah-memilih.png
+    - assets/images/
+
+image_picker_web: any

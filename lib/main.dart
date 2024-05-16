@@ -33,20 +33,37 @@ class _MainAppState extends State<MainApp> {
       useMaterial3: true,
     );
 
+    // return MaterialApp(
+    //   theme: themeData,
+    //   home: Scaffold(
+    //     appBar: AppBar(
+    //       flexibleSpace: Header(),
+    //     ),
+    //     body: SingleChildScrollView(
+    //       child: Column(
+    //         mainAxisSize: MainAxisSize.min,
+    //         children: [
+    //           content(),
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
     return MaterialApp(
       theme: themeData,
       home: Scaffold(
-        appBar: AppBar(
-          flexibleSpace: Header(),
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              content(),
-              Text('Footer'),
-            ],
-          ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              flexibleSpace: Header(),
+              expandedHeight: 68,
+              floating: true,
+              pinned: true,
+            ),
+            SliverToBoxAdapter(
+              child: content(),
+            )
+          ],
         ),
       ),
     );
