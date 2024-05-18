@@ -29,26 +29,11 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     ThemeData themeData = ThemeData(
-      colorSchemeSeed: Color(0xFFBF002A),
+      // colorSchemeSeed: Color(0xFFBF002A),
+      colorSchemeSeed: Color(0xFF904A4A),
       useMaterial3: true,
     );
 
-    // return MaterialApp(
-    //   theme: themeData,
-    //   home: Scaffold(
-    //     appBar: AppBar(
-    //       flexibleSpace: Header(),
-    //     ),
-    //     body: SingleChildScrollView(
-    //       child: Column(
-    //         mainAxisSize: MainAxisSize.min,
-    //         children: [
-    //           content(),
-    //         ],
-    //       ),
-    //     ),
-    //   ),
-    // );
     return MaterialApp(
       theme: themeData,
       home: Scaffold(

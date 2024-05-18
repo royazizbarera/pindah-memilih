@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker_web/image_picker_web.dart';
+import 'package:pindah_memilih/footer.dart';
 import 'package:pindah_memilih/model/form_pengajuan_model.dart';
 
 class Pengajuan extends StatefulWidget {
@@ -23,14 +24,11 @@ class _PengajuanState extends State<Pengajuan> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 72.0),
-      child: Column(
-        children: [
-          formPendaftaran(),
-          const Text('Footer'),
-        ],
-      ),
+    return Column(
+      children: [
+        formPendaftaran(),
+        const Footer(),
+      ],
     );
   }
 
