@@ -12,7 +12,6 @@ class Header extends StatefulWidget {
 
 class _HeaderState extends State<Header> {
   double heightHeader = 68.0;
-  bool isLogin = true;
   String username = 'Roy Aziz Barera';
   List<String> menuItems = [
     'Beranda',
@@ -81,7 +80,8 @@ class _HeaderState extends State<Header> {
   }
 
   Function()? _onPressedMenu(index) {
-    if ((index == 1 || index == 2) && !isLogin) {
+    if ((index == 1 || index == 2) &&
+        !Provider.of<HeaderState>(context, listen: false).login) {
       return null;
     }
     return () {
@@ -113,7 +113,7 @@ class _HeaderState extends State<Header> {
   // right header
   Widget rightHeader() {
     int? selectedItem;
-    if (isLogin) {
+    if (Provider.of<HeaderState>(context, listen: false).login) {
       return Row(
         children: [
           PopupMenuButton<int>(
@@ -155,7 +155,10 @@ class _HeaderState extends State<Header> {
                 child: const Text('Keluar'),
                 onTap: () {
                   setState(() {
-                    isLogin = false;
+                    Provider.of<HeaderState>(context, listen: false)
+                        .logoutAccount();
+                    Provider.of<HeaderState>(context, listen: false)
+                        .setIndex(0);
                   });
                 },
               ),
@@ -169,19 +172,53 @@ class _HeaderState extends State<Header> {
         ],
       );
     }
+
+    if (Provider.of<HeaderState>(context, listen: false).selectedIndex == 4) {
+      return SizedBox(
+        height: 40,
+        width: 218,
+        child: FilledButton(
+          onPressed: () {
+            setState(() {
+              Provider.of<HeaderState>(context, listen: false).setIndex(5);
+            });
+          },
+          child: const Text('Daftar'),
+        ),
+      );
+    }
+
+    if (Provider.of<HeaderState>(context, listen: false).selectedIndex == 5) {
+      return SizedBox(
+        height: 40,
+        width: 218,
+        child: OutlinedButton(
+          onPressed: () {
+            setState(() {
+              Provider.of<HeaderState>(context, listen: false).setIndex(4);
+            });
+          },
+          child: const Text('Masuk'),
+        ),
+      );
+    }
     return Row(
       children: [
         FilledButton(
           onPressed: () {
             setState(() {
-              isLogin = true;
+              Provider.of<HeaderState>(context, listen: false).setIndex(4);
             });
           },
           child: const Text('Masuk'),
         ),
         const SizedBox(width: 24.0),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            setState(() {
+              Provider.of<HeaderState>(context, listen: false).setIndex(5);
+            });
+          },
           child: const Text('Daftar'),
         ),
       ],

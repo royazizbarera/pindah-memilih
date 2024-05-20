@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:pindah_memilih/beranda.dart';
 import 'package:pindah_memilih/components/header.dart';
 import 'package:pindah_memilih/components/header_state.dart';
+import 'package:pindah_memilih/daftar.dart';
 import 'package:pindah_memilih/informasi_pengajuan.dart';
+import 'package:pindah_memilih/masuk.dart';
 import 'package:pindah_memilih/pengajuan.dart';
 import 'package:pindah_memilih/status_pengajuan.dart';
 import 'package:provider/provider.dart';
@@ -27,9 +29,28 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      Future.microtask(() {
+        if (!Provider.of<HeaderState>(context, listen: false).login) {
+          if (Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                  1 ||
+              Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                  2) {
+            Provider.of<HeaderState>(context, listen: false).setIndex(4);
+          }
+        }
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     ThemeData themeData = ThemeData(
+      /// Warna yang diinginkan ini
       // colorSchemeSeed: Color(0xFFBF002A),
+      /// Tapi yang ini yang kebuat pas di figma
       colorSchemeSeed: Color(0xFF904A4A),
       useMaterial3: true,
     );
@@ -46,7 +67,12 @@ class _MainAppState extends State<MainApp> {
               pinned: true,
             ),
             SliverToBoxAdapter(
-              child: content(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: themeData.colorScheme.onPrimary,
+                ),
+                child: content(),
+              ),
             )
           ],
         ),
@@ -55,6 +81,16 @@ class _MainAppState extends State<MainApp> {
   }
 
   Widget content() {
+    Future.microtask(() {
+      if (!Provider.of<HeaderState>(context, listen: false).login) {
+        if (Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                1 ||
+            Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                2) {
+          Provider.of<HeaderState>(context, listen: false).setIndex(4);
+        }
+      }
+    });
     int selectedIndex =
         Provider.of<HeaderState>(context, listen: true).selectedIndex;
     switch (selectedIndex) {
@@ -66,6 +102,10 @@ class _MainAppState extends State<MainApp> {
         return const StatusPengajuan();
       case 3:
         return const InformasiPengajuan();
+      case 4:
+        return const Masuk();
+      case 5:
+        return const Daftar();
       default:
         return const Placeholder();
     }
