@@ -3,28 +3,31 @@ import 'package:pindah_memilih/components/header_state.dart';
 import 'package:pindah_memilih/footer.dart';
 import 'package:provider/provider.dart';
 
-class Masuk extends StatefulWidget {
-  const Masuk({super.key});
+class Daftar extends StatefulWidget {
+  const Daftar({super.key});
 
   @override
-  State<Masuk> createState() => _MasukState();
+  State<Daftar> createState() => _DaftarState();
 }
 
-class _MasukState extends State<Masuk> {
-  bool obscureText = true;
+class _DaftarState extends State<Daftar> {
+  bool obscureText1 = true;
+  bool obscureText2 = true;
   TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController1 = TextEditingController();
+  TextEditingController passwordController2 = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        masuk(),
+        daftar(),
         const Footer(),
       ],
     );
   }
 
-  Widget masuk() {
+  Widget daftar() {
     Widget gap = const SizedBox(height: 25.0);
     return Padding(
       padding: const EdgeInsets.all(48.0),
@@ -68,7 +71,7 @@ class _MasukState extends State<Masuk> {
               ),
               gap,
               Text(
-                'Masuk',
+                'Daftar',
                 style: TextStyle(
                   fontSize: 24,
                   color: Theme.of(context).colorScheme.primary,
@@ -94,8 +97,8 @@ class _MasukState extends State<Masuk> {
                 width: 400,
                 height: 56,
                 child: TextFormField(
-                  controller: passwordController,
-                  obscureText: obscureText,
+                  controller: passwordController1,
+                  obscureText: obscureText1,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(
@@ -105,7 +108,30 @@ class _MasukState extends State<Masuk> {
                       icon: const Icon(Icons.visibility_outlined),
                       onPressed: () {
                         setState(() {
-                          obscureText = !obscureText;
+                          obscureText1 = !obscureText1;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              gap,
+              SizedBox(
+                width: 400,
+                height: 56,
+                child: TextFormField(
+                  controller: passwordController2,
+                  obscureText: obscureText2,
+                  decoration: InputDecoration(
+                    labelText: 'Masukan kembali password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                    ),
+                    suffixIcon: IconButton(
+                      icon: const Icon(Icons.visibility_outlined),
+                      onPressed: () {
+                        setState(() {
+                          obscureText2 = !obscureText2;
                         });
                       },
                     ),
@@ -119,11 +145,21 @@ class _MasukState extends State<Masuk> {
                 child: FilledButton(
                   onPressed: () {
                     if (emailController.text.isEmpty ||
-                        passwordController.text.isEmpty) {
+                        passwordController1.text.isEmpty ||
+                        passwordController2.text.isEmpty) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: const Text(
                               'Email dan password tidak boleh kosong'),
+                          backgroundColor: Theme.of(context).colorScheme.error,
+                        ),
+                      );
+                      return;
+                    }
+                    if (passwordController1.text != passwordController2.text) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text('Password tidak sama'),
                           backgroundColor: Theme.of(context).colorScheme.error,
                         ),
                       );
@@ -136,7 +172,7 @@ class _MasukState extends State<Masuk> {
                           .setIndex(0);
                     });
                   },
-                  child: const Text('Masuk'),
+                  child: const Text('Daftar'),
                 ),
               ),
               gap,

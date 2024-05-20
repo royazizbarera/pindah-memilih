@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pindah_memilih/components/header_state.dart';
 import 'package:pindah_memilih/components/hitung_mundur.dart';
 import 'package:pindah_memilih/components/informasi_pengajuan_content.dart';
 import 'package:pindah_memilih/footer.dart';
+import 'package:provider/provider.dart';
 
 class Beranda extends StatefulWidget {
   const Beranda({super.key});
@@ -48,7 +50,7 @@ class _BerandaState extends State<Beranda> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 400,
                     child: Text(
                       'Bingung untuk melakukan pemindahan TPS karena sedang berada diluar domisili TPS?\n\nAyo pindahkan pemilihan TPS Anda sekarang!',
@@ -59,8 +61,13 @@ class _BerandaState extends State<Beranda> {
                   ),
                   const SizedBox(height: 24),
                   FilledButton(
-                    onPressed: () {},
-                    child: Text('Ajukan pemindahan'),
+                    onPressed: () {
+                      setState(() {
+                        Provider.of<HeaderState>(context, listen: false)
+                            .setIndex(1);
+                      });
+                    },
+                    child: const Text('Ajukan pemindahan'),
                   ),
                 ],
               ),

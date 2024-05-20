@@ -156,7 +156,7 @@ class _HeaderState extends State<Header> {
                 onTap: () {
                   setState(() {
                     Provider.of<HeaderState>(context, listen: false)
-                        .loginAccont();
+                        .logoutAccount();
                     Provider.of<HeaderState>(context, listen: false)
                         .setIndex(0);
                   });
@@ -170,6 +170,36 @@ class _HeaderState extends State<Header> {
             icon: const Icon(Icons.settings_outlined),
           )
         ],
+      );
+    }
+
+    if (Provider.of<HeaderState>(context, listen: false).selectedIndex == 4) {
+      return SizedBox(
+        height: 40,
+        width: 218,
+        child: FilledButton(
+          onPressed: () {
+            setState(() {
+              Provider.of<HeaderState>(context, listen: false).setIndex(5);
+            });
+          },
+          child: const Text('Daftar'),
+        ),
+      );
+    }
+
+    if (Provider.of<HeaderState>(context, listen: false).selectedIndex == 5) {
+      return SizedBox(
+        height: 40,
+        width: 218,
+        child: OutlinedButton(
+          onPressed: () {
+            setState(() {
+              Provider.of<HeaderState>(context, listen: false).setIndex(4);
+            });
+          },
+          child: const Text('Masuk'),
+        ),
       );
     }
     return Row(
