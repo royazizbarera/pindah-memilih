@@ -12,23 +12,21 @@ class Pengajuan extends StatefulWidget {
 
 class _PengajuanState extends State<Pengajuan> {
   double widhtContent = 872.0;
-  bool persetujuanValue = true;
-  bool terkirim = false;
-  FormPengajuanModel formPengajuanModel = FormPengajuanModel();
-
-  @override
-  void dispose() {
-    formPengajuanModel.dispose();
-    super.dispose();
-  }
+  FormPengajuanModel formPengajuanModel = FormPengajuanModel.getInstance();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        formPendaftaran(),
-        const Footer(),
-      ],
+    return GestureDetector(
+      onDoubleTap: () {
+        formPengajuanModel.fillDataDummy();
+        setState(() {});
+      },
+      child: Column(
+        children: [
+          formPendaftaran(),
+          const Footer(),
+        ],
+      ),
     );
   }
 
@@ -39,7 +37,7 @@ class _PengajuanState extends State<Pengajuan> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (!terkirim) headerForm(),
+          if (!formPengajuanModel.terkirim) headerForm(),
           SizedBox(height: paddingContent),
           form(),
         ],
@@ -52,7 +50,7 @@ class _PengajuanState extends State<Pengajuan> {
       width: widhtContent,
       child: Column(
         children: [
-          terkirim
+          formPengajuanModel.terkirim
               ? const Text('Pendaftaran Pengajuan Berhasil')
               : const Text('Pendaftaran Pengajuan'),
           const SizedBox(height: 12),
@@ -74,7 +72,7 @@ class _PengajuanState extends State<Pengajuan> {
   Widget rightForm() {
     Widget gap = const SizedBox(height: 24.0);
     Widget buttonKirim = FilledButton(
-      onPressed: persetujuanValue
+      onPressed: formPengajuanModel.menyetujuiPersyaratan
           ? () {
               if (formPengajuanModel.isFormFilledIn()) {
                 showDialog(
@@ -89,7 +87,8 @@ class _PengajuanState extends State<Pengajuan> {
                         OutlinedButton(
                           onPressed: () {
                             setState(() {
-                              terkirim = true;
+                              formPengajuanModel.terkirim = true;
+                              
                             });
                             Navigator.of(context).pop();
                           },
@@ -121,7 +120,7 @@ class _PengajuanState extends State<Pengajuan> {
     Widget buttonBatalkanPendaftaranPengajuan = OutlinedButton(
       onPressed: () {
         setState(() {
-          terkirim = false;
+          formPengajuanModel.clear();
         });
       },
       child: const Text('Batalkan Pendaftaran Pengajuan'),
@@ -157,7 +156,9 @@ class _PengajuanState extends State<Pengajuan> {
         gap,
         SizedBox(
           height: 40,
-          child: terkirim ? buttonBatalkanPendaftaranPengajuan : buttonKirim,
+          child: formPengajuanModel.terkirim
+              ? buttonBatalkanPendaftaranPengajuan
+              : buttonKirim,
         )
       ],
     );
@@ -173,7 +174,7 @@ class _PengajuanState extends State<Pengajuan> {
         ),
         gap,
         textFieldForm(
-          labelText: 'Nomor Induk Keluarga',
+          labelText: 'Nomor Induk Kependudukan',
           textController: formPengajuanModel.nik,
         ),
         gap,
@@ -193,13 +194,14 @@ class _PengajuanState extends State<Pengajuan> {
         ),
         gap,
         uploadFile(
-            title: 'Foto KTP/KK',
-            image: formPengajuanModel.ktpKk,
-            onImagePicked: (image) {
-              setState(() {
-                formPengajuanModel.ktpKk = image;
-              });
-            }),
+          title: 'Foto KTP/KK',
+          image: formPengajuanModel.ktpKk,
+          onImagePicked: (image) {
+            setState(() {
+              formPengajuanModel.ktpKk = image;
+            });
+          },
+        ),
       ],
     );
   }
@@ -215,12 +217,14 @@ class _PengajuanState extends State<Pengajuan> {
               height: 48,
               width: 48,
               child: Checkbox(
-                value: persetujuanValue,
-                onChanged: (value) {
-                  setState(() {
-                    persetujuanValue = value!;
-                  });
-                },
+                value: formPengajuanModel.menyetujuiPersyaratan,
+                onChanged: formPengajuanModel.terkirim
+                    ? null
+                    : (value) {
+                        setState(() {
+                          formPengajuanModel.menyetujuiPersyaratan = value!;
+                        });
+                      },
               ),
             ),
             const SizedBox(width: 8),
@@ -244,6 +248,15 @@ class _PengajuanState extends State<Pengajuan> {
       {required String title,
       Image? image,
       required void Function(Image?) onImagePicked}) {
+    String imageLabel = 'Tambahkan File';
+    if (image != null) {
+      var imageProvider = image.image;
+      if (imageProvider is AssetImage) {
+        imageLabel = imageProvider.assetName;
+      } else {
+        imageLabel = image.semanticLabel!;
+      }
+    }
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,58 +271,60 @@ class _PengajuanState extends State<Pengajuan> {
         SizedBox(
           width: 400.0,
           child: OutlinedButton(
-            onPressed: () async {
-              Image? pickedImage = await ImagePickerWeb.getImageAsWidget();
-              if (pickedImage != null) {
-                onImagePicked(pickedImage);
-              }
-            },
+            onPressed: formPengajuanModel.terkirim
+                ? null
+                : () async {
+                    Image? pickedImage =
+                        await ImagePickerWeb.getImageAsWidget();
+                    if (pickedImage != null) {
+                      onImagePicked(pickedImage);
+                    }
+                  },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(Icons.file_upload_outlined),
                 const SizedBox(width: 8.0),
-                image != null
-                    ? MiddleEllipsisText(text: image.semanticLabel!)
-                    : const Text('Tambahkan File'),
+                MiddleEllipsisText(text: imageLabel),
               ],
             ),
           ),
         ),
         const SizedBox(height: 24.0),
         Container(
-            width: 240.0,
-            height: 138.0,
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.30),
-                  offset: const Offset(0, 2),
-                  blurRadius: 2,
-                  spreadRadius: 0,
-                ),
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.15),
-                  offset: const Offset(0, 2),
-                  blurRadius: 6,
-                  spreadRadius: 2,
-                ),
-              ],
-            ),
-            child: InkWell(
-              child: image ?? Image.asset('assets/images/Thumbnail.png'),
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (context) => Dialog(
-                    child: SizedBox(
-                      child: image,
-                    ),
+          width: 240.0,
+          height: 138.0,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.30),
+                offset: const Offset(0, 2),
+                blurRadius: 2,
+                spreadRadius: 0,
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.15),
+                offset: const Offset(0, 2),
+                blurRadius: 6,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: InkWell(
+            child: image ?? Image.asset('assets/images/Thumbnail.png'),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => Dialog(
+                  child: SizedBox(
+                    child: image,
                   ),
-                );
-              },
-            ))
+                ),
+              );
+            },
+          ),
+        )
       ],
     );
   }
@@ -321,6 +336,7 @@ class _PengajuanState extends State<Pengajuan> {
     return SizedBox(
       width: 400.0,
       child: TextField(
+        readOnly: formPengajuanModel.terkirim,
         controller: textController,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),

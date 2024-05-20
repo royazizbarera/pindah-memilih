@@ -27,6 +27,23 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      Future.microtask(() {
+        if (!Provider.of<HeaderState>(context, listen: false).login) {
+          if (Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                  1 ||
+              Provider.of<HeaderState>(context, listen: false).selectedIndex ==
+                  2) {
+            Provider.of<HeaderState>(context, listen: false).setIndex(0);
+          }
+        }
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     ThemeData themeData = ThemeData(
       // colorSchemeSeed: Color(0xFFBF002A),
@@ -46,7 +63,12 @@ class _MainAppState extends State<MainApp> {
               pinned: true,
             ),
             SliverToBoxAdapter(
-              child: content(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: themeData.colorScheme.onPrimary,
+                ),
+                child: content(),
+              ),
             )
           ],
         ),
