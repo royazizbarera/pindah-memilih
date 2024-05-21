@@ -28,55 +28,56 @@ class _FooterState extends State<Footer> {
             ),
             gap,
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
                 // Left Column
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Explore',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      gap,
-                      const Text('Tentang Pindah Memilih'),
-                      gap,
-                      const Text('Disclaimer'),
-                      gap,
-                      const Text('Tim Kami'),
-                    ],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                    'Explore',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                    ),
+                    gap,
+                    const Text('Tentang Pindah Memilih', style: TextStyle(fontSize: 22)),
+                    gap,
+                    const Text('Disclaimer', style: TextStyle(fontSize: 22)),
+                    gap,
+                    const Text('Tim Kami', style: TextStyle(fontSize: 22)),
+                  ],
                   ),
                 ),
                 // Right Column
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Hubungi Kami',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      gap,
-                      const Text('contact@pindahmemilih.id'),
-                      gap,
-                      const Text('Instagram'),
-                      gap,
-                      const Text('Twitter'),
-                    ],
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                    'Hubungi Kami',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                    ),
+                    gap,
+                    const Text('contact@pindahmemilih.id', style: TextStyle(fontSize: 22)),
+                    gap,
+                    const Text('Instagram', style: TextStyle(fontSize: 22)),
+                    gap,
+                    const Text('Twitter', style: TextStyle(fontSize: 22)),
+                  ],
                   ),
                 ),
-              ],
-            ),
-            gap,
+                ],
+              ),
+              gap,
             const Divider(),
             gap,
             const SizedBox(
               width: 400,
               child: Text(
-                'Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk membantu masyarakat melakukan pemindahan TPS secara online.'
+                'Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk membantu masyarakat melakukan pemindahan TPS secara online.',
+                style: TextStyle(fontSize: 16),
               ),
             ),
           ],
