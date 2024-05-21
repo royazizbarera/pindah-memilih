@@ -76,9 +76,9 @@ class _StatusPengajuanState extends State<StatusPengajuan> {
     return Container(
       width: 1394,
       height: 669,
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondaryContainer,
-        borderRadius: const BorderRadius.all(Radius.circular(16)),
+      decoration: const BoxDecoration(
+        color: Color(0xFFFFF0EF),
+        borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 72.0),
@@ -238,7 +238,7 @@ class _StatusPengajuanState extends State<StatusPengajuan> {
           Container(
             width: 872,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.secondaryContainer,
+              color: Color(0xFFFFF0EF),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.3),
@@ -313,7 +313,7 @@ class _StatusPengajuanState extends State<StatusPengajuan> {
       width: 1136,
       // height: 948,
       child: Card(
-        color: Theme.of(context).colorScheme.secondaryContainer,
+        color: Color(0xFFFFF0EF),
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
