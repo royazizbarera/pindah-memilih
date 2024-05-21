@@ -51,8 +51,14 @@ class _PengajuanState extends State<Pengajuan> {
       child: Column(
         children: [
           formPengajuanModel.terkirim
-              ? const Text('Pendaftaran Pengajuan Berhasil')
-              : const Text('Pendaftaran Pengajuan'),
+          ? const Text(
+          'Pendaftaran Pengajuan Berhasil',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            )
+          : const Text(
+          'Pendaftaran Pengajuan',
+          style: TextStyle(fontSize: 24),
+            ),
           const SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -373,15 +379,16 @@ class _PengajuanState extends State<Pengajuan> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Hai, Warga Negara Indonesia yang terhormat!\n'),
-            Text(
-                'Apakah Anda ingin memilih di Pemilu, tetapi tidak memungkinkan untuk memilih di TPS Anda yang dulu? Kami siap membantu Anda untuk memindahkan TPS Anda!\nSebelum Anda mengisi formulir pemindahan TPS, mohon perhatikan beberapa hal berikut:\n1. Pastikan Anda memenuhi syarat pemindahan TPS sesuai dengan peraturan yang berlaku.\n2. Isi formulir dengan informasi yang benar dan jelas untuk mempermudah proses verifikasi.\n3. Mohon tunggu konfirmasi dari kami setelah mengirimkan formulir.\nKami berkomitmen untuk membantu Anda dalam proses pemindahan TPS agar Anda dapat menggunakan hak pilih Anda dengan mudah dan nyaman.\n'),
+        Text('Hai, Warga Negara Indonesia yang terhormat!\n', 
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+        Text(
+            'Apakah Anda ingin memilih di Pemilu, tetapi tidak memungkinkan untuk memilih di TPS Anda yang dulu? Kami siap membantu Anda untuk memindahkan TPS Anda!\nSebelum Anda mengisi formulir pemindahan TPS, mohon perhatikan beberapa hal berikut:\n1. Pastikan Anda memenuhi syarat pemindahan TPS sesuai dengan peraturan yang berlaku.\n2. Isi formulir dengan informasi yang benar dan jelas untuk mempermudah proses verifikasi.\n3. Mohon tunggu konfirmasi dari kami setelah mengirimkan formulir.\nKami berkomitmen untuk membantu Anda dalam proses pemindahan TPS agar Anda dapat menggunakan hak pilih Anda dengan mudah dan nyaman.\n'),
           ],
         ),
       ),
-    );
-  }
-}
+        );
+      }
+    }
 
 class MiddleEllipsisText extends StatelessWidget {
   final String text;
