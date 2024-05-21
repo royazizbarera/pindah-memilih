@@ -11,6 +11,7 @@ class _FooterState extends State<Footer> {
   @override
   Widget build(BuildContext context) {
     Widget gap = const SizedBox(height: 24);
+    
     return Container(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondaryContainer,
@@ -29,13 +30,16 @@ class _FooterState extends State<Footer> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // left
+                // Left Column
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Explore'),
+                      const Text(
+                        'Explore',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       gap,
                       const Text('Tentang Pindah Memilih'),
                       gap,
@@ -45,13 +49,16 @@ class _FooterState extends State<Footer> {
                     ],
                   ),
                 ),
-                // right
+                // Right Column
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Hubungi Kami'),
+                      const Text(
+                        'Hubungi Kami',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                       gap,
                       const Text('contact@pindahmemilih.id'),
                       gap,
@@ -69,8 +76,9 @@ class _FooterState extends State<Footer> {
             const SizedBox(
               width: 400,
               child: Text(
-                  'Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk membantu masyarakat melakukan pemindahan TPS secara online.'),
-            )
+                'Pindah Memilih merupakan sebuah aplikasi milik pemerintah untuk membantu masyarakat melakukan pemindahan TPS secara online.'
+              ),
+            ),
           ],
         ),
       ),
