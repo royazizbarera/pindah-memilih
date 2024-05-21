@@ -98,11 +98,11 @@ class _HeaderState extends State<Header> {
           item == selectedItem
               ? FilledButton.tonal(
                   onPressed: _onPressedMenu(item),
-                  child: Text(menuItems[item]),
+                  child: Text(menuItems[item], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 )
               : TextButton(
                   onPressed: _onPressedMenu(item),
-                  child: Text(menuItems[item]),
+                  child: Text(menuItems[item], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 ),
           const SizedBox(width: 24.0)
         ],
