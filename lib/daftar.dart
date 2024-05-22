@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pindah_memilih/components/header_state.dart';
+import 'package:pindah_memilih/controller/auth.dart';
 import 'package:pindah_memilih/footer.dart';
 import 'package:provider/provider.dart';
 
@@ -11,6 +13,7 @@ class Daftar extends StatefulWidget {
 }
 
 class _DaftarState extends State<Daftar> {
+  bool _isLoading = false;
   bool obscureText1 = true;
   bool obscureText2 = true;
   IconData eye1 = Icons.visibility_off_outlined;
@@ -150,38 +153,107 @@ class _DaftarState extends State<Daftar> {
               SizedBox(
                 width: 400,
                 height: 40,
-                child: FilledButton(
-                  onPressed: () {
-                    if (emailController.text.isEmpty ||
-                        passwordController1.text.isEmpty ||
-                        passwordController2.text.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: const Text(
-                              'Email dan password tidak boleh kosong'),
-                          backgroundColor: Theme.of(context).colorScheme.error,
-                        ),
-                      );
-                      return;
-                    }
-                    if (passwordController1.text != passwordController2.text) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: const Text('Password tidak sama'),
-                          backgroundColor: Theme.of(context).colorScheme.error,
-                        ),
-                      );
-                      return;
-                    }
-                    setState(() {
-                      Provider.of<HeaderState>(context, listen: false)
-                          .loginAccont();
-                      Provider.of<HeaderState>(context, listen: false)
-                          .setIndex(0);
-                    });
-                  },
-                  child: const Text('Daftar'),
-                ),
+                child: _isLoading
+                    ? const SizedBox(
+                        width: 40, child: CircularProgressIndicator())
+                    : FilledButton(
+                        onPressed: () async {
+                          if (emailController.text.isEmpty ||
+                              passwordController1.text.isEmpty ||
+                              passwordController2.text.isEmpty) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text(
+                                      'Email dan password tidak boleh kosong'),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
+                                ),
+                              );
+                            }
+                            return;
+                          }
+                          if (passwordController1.text !=
+                              passwordController2.text) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text('Password tidak sama'),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
+                                ),
+                              );
+                            }
+                            return;
+                          }
+                          setState(() {
+                            _isLoading = true;
+                          });
+                          try {
+                            await AuthController.signUp(
+                              emailController.text,
+                              passwordController1.text,
+                            );
+                            setState(() {
+                              if (context.mounted) {
+                                Provider.of<HeaderState>(context, listen: false)
+                                    .loginAccont();
+                                Provider.of<HeaderState>(context, listen: false)
+                                    .setIndex(0);
+                                    Provider.of<HeaderState>(context, listen: false).setUsername = FirebaseAuth.instance.currentUser!.email!;
+                              }
+                            });
+                          } catch (e) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(e.toString()),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
+                                ),
+                              );
+                            }
+                          } finally {
+                            setState(() {
+                              _isLoading = false;
+                            });
+                          }
+                        },
+                        child: const Text('Daftar'),
+                      ),
+
+                // FilledButton(
+                //   onPressed: () {
+                //     if (emailController.text.isEmpty ||
+                //         passwordController1.text.isEmpty ||
+                //         passwordController2.text.isEmpty) {
+                //       ScaffoldMessenger.of(context).showSnackBar(
+                //         SnackBar(
+                //           content: const Text(
+                //               'Email dan password tidak boleh kosong'),
+                //           backgroundColor: Theme.of(context).colorScheme.error,
+                //         ),
+                //       );
+                //       return;
+                //     }
+                //     if (passwordController1.text != passwordController2.text) {
+                //       ScaffoldMessenger.of(context).showSnackBar(
+                //         SnackBar(
+                //           content: const Text('Password tidak sama'),
+                //           backgroundColor: Theme.of(context).colorScheme.error,
+                //         ),
+                //       );
+                //       return;
+                //     }
+                //     setState(() {
+                //       Provider.of<HeaderState>(context, listen: false)
+                //           .loginAccont();
+                //       Provider.of<HeaderState>(context, listen: false)
+                //           .setIndex(0);
+                //     });
+                //   },
+                //   child: const Text('Daftar'),
+                // ),
               ),
               gap,
               // Divider

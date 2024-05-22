@@ -35,7 +35,7 @@ class _BerandaState extends State<Beranda> {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surface,
         border: Border.all(
-          color: Color(0xFFFFF0EF),
+          color: const Color(0xFFFFF0EF),
           width: 1.0,
         ),
       ),

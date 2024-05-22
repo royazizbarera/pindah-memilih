@@ -10,9 +10,17 @@ class HeaderState extends ChangeNotifier {
 
   int _selectedIndex = 0;
   bool isLogin = false;
+  String username = '';
+
+  String get getUsername => username;
 
   int get selectedIndex => _selectedIndex;
   bool get login => isLogin;
+
+  set setUsername(String name) {
+    username = name;
+    notifyListeners();
+  }
 
   void setIndex(int index) {
     _selectedIndex = index;

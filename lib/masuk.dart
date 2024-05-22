@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pindah_memilih/components/header_state.dart';
+import 'package:pindah_memilih/controller/auth.dart';
 import 'package:pindah_memilih/footer.dart';
 import 'package:provider/provider.dart';
 
@@ -11,12 +13,15 @@ class Masuk extends StatefulWidget {
 }
 
 class _MasukState extends State<Masuk> {
+  bool _isLoading = false;
   bool obscureText = true;
   IconData eye = Icons.visibility_off_outlined;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    emailController.text = 'royazizbarera@gmail.com';
+    passwordController.text = 'aziz1234';
     return Column(
       children: [
         masuk(),
@@ -120,28 +125,85 @@ class _MasukState extends State<Masuk> {
               SizedBox(
                 width: 400,
                 height: 40,
-                child: FilledButton(
-                  onPressed: () {
-                    if (emailController.text.isEmpty ||
-                        passwordController.text.isEmpty) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: const Text(
-                              'Email dan password tidak boleh kosong'),
-                          backgroundColor: Theme.of(context).colorScheme.error,
-                        ),
-                      );
-                      return;
-                    }
-                    setState(() {
-                      Provider.of<HeaderState>(context, listen: false)
-                          .loginAccont();
-                      Provider.of<HeaderState>(context, listen: false)
-                          .setIndex(0);
-                    });
-                  },
-                  child: const Text('Masuk'),
-                ),
+                child: _isLoading
+                    ? const SizedBox(
+                        width: 40, child: CircularProgressIndicator())
+                    : FilledButton(
+                        child: const Text('Masuk'),
+                        onPressed: () async {
+                          var user = await AuthController.signIn(
+                            emailController.text,
+                            passwordController.text,
+                          );
+
+                          setState(() {
+                            _isLoading = true;
+                          });
+
+                          if (context.mounted) {
+                            if (user != null) {
+                              Provider.of<HeaderState>(context, listen: false)
+                                  .loginAccont();
+                              Provider.of<HeaderState>(context, listen: false)
+                                  .setIndex(0);
+                              Provider.of<HeaderState>(context, listen: false)
+                                      .setUsername =
+                                  FirebaseAuth.instance.currentUser!.email!;
+                            }
+                          }
+                          if (emailController.text.isEmpty ||
+                              passwordController.text.isEmpty) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: const Text(
+                                      'Email dan password tidak boleh kosong'),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
+                                ),
+                              );
+                            }
+                            setState(() {
+                              _isLoading = false;
+                            });
+                            return;
+                          }
+                          setState(() {
+                            _isLoading = false;
+                          });
+                        },
+                      ),
+                // FilledButton(
+                //   onPressed: () async {
+                //     print('klik');
+                //     if (emailController.text.isEmpty ||
+                //         passwordController.text.isEmpty) {
+                //       if (context.mounted) {
+                //         ScaffoldMessenger.of(context).showSnackBar(
+                //           SnackBar(
+                //             content: const Text(
+                //                 'Email dan password tidak boleh kosong'),
+                //             backgroundColor:
+                //                 Theme.of(context).colorScheme.error,
+                //           ),
+                //         );
+                //       }
+                //       return;
+                //     }
+                //     print('masuk');
+                //     await AuthController.signIn(
+                //       emailController.text,
+                //       passwordController.text,
+                //     );
+                //     // setState(() {
+                //     //   Provider.of<HeaderState>(context, listen: false)
+                //     //       .loginAccont();
+                //     //   Provider.of<HeaderState>(context, listen: false)
+                //     //       .setIndex(0);
+                //     // });
+                //   },
+                //   child: const Text('Masuk'),
+                // ),
               ),
               gap,
               // Divider

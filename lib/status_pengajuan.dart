@@ -238,7 +238,7 @@ class _StatusPengajuanState extends State<StatusPengajuan> {
           Container(
             width: 872,
             decoration: BoxDecoration(
-              color: Color(0xFFFFF0EF),
+              color: const Color(0xFFFFF0EF),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.3),
@@ -313,7 +313,7 @@ class _StatusPengajuanState extends State<StatusPengajuan> {
       width: 1136,
       // height: 948,
       child: Card(
-        color: Color(0xFFFFF0EF),
+        color: const Color(0xFFFFF0EF),
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(

@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pindah_memilih/components/header_state.dart';
 import 'package:pindah_memilih/constants.dart';
+import 'package:pindah_memilih/controller/auth.dart';
 import 'package:provider/provider.dart';
 
 class Header extends StatefulWidget {
@@ -11,14 +13,25 @@ class Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<Header> {
+  var _auth = FirebaseAuth.instance;
   double heightHeader = 68.0;
-  String username = 'Roy Aziz Barera';
+  // String username = Provider.of<HeaderState>(context, listen: false).setUsername = username;
   List<String> menuItems = [
     'Beranda',
     'Pengajuan',
     'Status Pengajuan',
     'Informasi Pengajuan',
   ];
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   final currentUser = _auth.currentUser;
+  //   if (currentUser != null) {
+  //     username = currentUser.email.toString();
+  //     print(username);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +181,7 @@ class _HeaderState extends State<Header> {
                     const Icon(Icons.person),
                     const SizedBox(width: 8.0),
                     Text(
-                      username,
+                      Provider.of<HeaderState>(context, listen: false).username,
                       style: const TextStyle(fontSize: 14),
                     ),
                   ],
@@ -185,6 +198,7 @@ class _HeaderState extends State<Header> {
                 child: const Text('Keluar'),
                 onTap: () {
                   setState(() {
+                    AuthController.signOut();
                     Provider.of<HeaderState>(context, listen: false)
                         .logoutAccount();
                     Provider.of<HeaderState>(context, listen: false)
