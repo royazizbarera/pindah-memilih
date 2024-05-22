@@ -129,26 +129,6 @@ class _MasukState extends State<Masuk> {
                     : FilledButton(
                         child: const Text('Masuk'),
                         onPressed: () async {
-                          var user = await AuthController.signIn(
-                            emailController.text,
-                            passwordController.text,
-                          );
-
-                          setState(() {
-                            _isLoading = true;
-                          });
-
-                          if (context.mounted) {
-                            if (user != null) {
-                              Provider.of<HeaderState>(context, listen: false)
-                                  .loginAccont();
-                              Provider.of<HeaderState>(context, listen: false)
-                                  .setIndex(0);
-                              Provider.of<HeaderState>(context, listen: false)
-                                      .setUsername =
-                                  FirebaseAuth.instance.currentUser!.email!;
-                            }
-                          }
                           if (emailController.text.isEmpty ||
                               passwordController.text.isEmpty) {
                             if (context.mounted) {
@@ -165,6 +145,34 @@ class _MasukState extends State<Masuk> {
                               _isLoading = false;
                             });
                             return;
+                          }
+                          setState(() {
+                            _isLoading = true;
+                          });
+                          var user = await AuthController.signIn(
+                            emailController.text,
+                            passwordController.text,
+                          );
+
+                          if (context.mounted) {
+                            if (user != null) {
+                              Provider.of<HeaderState>(context, listen: false)
+                                  .loginAccont();
+                              Provider.of<HeaderState>(context, listen: false)
+                                  .setIndex(0);
+                              Provider.of<HeaderState>(context, listen: false)
+                                      .setUsername =
+                                  FirebaseAuth.instance.currentUser!.email!;
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content:
+                                      const Text('Email atau password salah'),
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.error,
+                                ),
+                              );
+                            }
                           }
                           setState(() {
                             _isLoading = false;
