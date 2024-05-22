@@ -13,6 +13,8 @@ class Daftar extends StatefulWidget {
 class _DaftarState extends State<Daftar> {
   bool obscureText1 = true;
   bool obscureText2 = true;
+  IconData eye1 = Icons.visibility_off_outlined;
+  IconData eye2 = Icons.visibility_off_outlined;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController1 = TextEditingController();
   TextEditingController passwordController2 = TextEditingController();
@@ -105,10 +107,13 @@ class _DaftarState extends State<Daftar> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     suffixIcon: IconButton(
-                      icon: const Icon(Icons.visibility_outlined),
+                      icon: Icon(eye1),
                       onPressed: () {
                         setState(() {
                           obscureText1 = !obscureText1;
+                          eye1 = !obscureText1
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined;
                         });
                       },
                     ),
@@ -128,10 +133,13 @@ class _DaftarState extends State<Daftar> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     suffixIcon: IconButton(
-                      icon: const Icon(Icons.visibility_outlined),
+                      icon: Icon(eye2),
                       onPressed: () {
                         setState(() {
                           obscureText2 = !obscureText2;
+                          eye2 = !obscureText2
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined;
                         });
                       },
                     ),

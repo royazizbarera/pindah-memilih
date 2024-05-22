@@ -12,6 +12,7 @@ class Masuk extends StatefulWidget {
 
 class _MasukState extends State<Masuk> {
   bool obscureText = true;
+  IconData eye = Icons.visibility_off_outlined;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   @override
@@ -102,10 +103,13 @@ class _MasukState extends State<Masuk> {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     suffixIcon: IconButton(
-                      icon: const Icon(Icons.visibility_outlined),
+                      icon: Icon(eye),
                       onPressed: () {
                         setState(() {
                           obscureText = !obscureText;
+                          eye = !obscureText
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_outlined;
                         });
                       },
                     ),
