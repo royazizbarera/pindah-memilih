@@ -96,14 +96,44 @@ class _HeaderState extends State<Header> {
       children: [
         for (int item = 0; item < menuItems.length; item++) ...[
           item == selectedItem
-              ? FilledButton.tonal(
-                  onPressed: _onPressedMenu(item),
-                  child: Text(menuItems[item], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-                )
-              : TextButton(
-                  onPressed: _onPressedMenu(item),
-                  child: Text(menuItems[item], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-                ),
+              ? Provider.of<HeaderState>(context).login == true
+                  ? FilledButton.tonal(
+                      onPressed: _onPressedMenu(item),
+                      child: Text(menuItems[item],
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold)),
+                    )
+                  : GestureDetector(
+                      onTap: () {
+                        Provider.of<HeaderState>(context, listen: false)
+                            .setIndex(4);
+                      },
+                      child: FilledButton.tonal(
+                        onPressed: _onPressedMenu(item),
+                        child: Text(menuItems[item],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    )
+              : Provider.of<HeaderState>(context).login == true
+                  ? TextButton(
+                      onPressed: _onPressedMenu(item),
+                      child: Text(menuItems[item],
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold)),
+                    )
+                  : GestureDetector(
+                      onTap: () {
+                        Provider.of<HeaderState>(context, listen: false)
+                            .setIndex(4);
+                      },
+                      child: TextButton(
+                        onPressed: _onPressedMenu(item),
+                        child: Text(menuItems[item],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ),
           const SizedBox(width: 24.0)
         ],
       ],
