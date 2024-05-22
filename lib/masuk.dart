@@ -20,8 +20,6 @@ class _MasukState extends State<Masuk> {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    emailController.text = 'royazizbarera@gmail.com';
-    passwordController.text = 'aziz1234';
     return Column(
       children: [
         masuk(),
